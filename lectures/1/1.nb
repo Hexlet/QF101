@@ -1,0 +1,149 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5109,        140]
+NotebookOptionsPosition[      4796,        124]
+NotebookOutlinePosition[      5139,        139]
+CellTagsIndexPosition[      5096,        136]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["Q", "0"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           FractionBox["r", "m"]}], ")"}], 
+         RowBox[{"t", " ", "m"}]]}], ",", 
+       RowBox[{
+        SubscriptBox["Q", "0"], 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"r", " ", "t"}]]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"StringForm", "[", 
+         RowBox[{"\"\<Discrete with `1` periods\>\"", ",", "m"}], "]"}], ",", 
+        "\"\<Continuous\>\""}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"StringForm", "[", 
+        RowBox[{
+        "\"\<r=``,m=``,\!\(\*SubscriptBox[\(Q\), \(0\)]\)=``\>\"", ",", "r", 
+         ",", "m", ",", 
+         SubscriptBox["Q", "0"]}], "]"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0.1", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "1", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["Q", "0"], ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5889528884407635`*^9, 3.5889530021440125`*^9}, {
+  3.5889530397927113`*^9, 3.588953322021856*^9}, {3.5889534051982975`*^9, 
+  3.58895352297799*^9}, {3.5889535558500338`*^9, 3.5889536229854136`*^9}, {
+  3.589004142239583*^9, 3.5890041475182548`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 1., $CellContext`r$$ = 
+    0.1, $CellContext`$29$$ = 1., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`r$$], 0.1, 0.01}, {
+      Hold[$CellContext`m$$], 1, 12}, {{
+       Hold[$CellContext`$29$$], 1, 
+       RawBoxes[
+        SubscriptBox["Q", "0"]]}, 1, 10}}, Typeset`size$$ = {
+    537., {120., 123.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`r$30167$$ = 
+    0, $CellContext`m$30168$$ = 0, $CellContext`$29$30169$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`m$$ = 1, $CellContext`r$$ = 
+        0.1, $CellContext`$29$$ = 1}, "ControllerVariables" :> {
+        Hold[$CellContext`r$$, $CellContext`r$30167$$, 0], 
+        Hold[$CellContext`m$$, $CellContext`m$30168$$, 0], 
+        Hold[$CellContext`$29$$, $CellContext`$29$30169$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[{$CellContext`$29$$ (
+           1 + $CellContext`r$$/$CellContext`m$$)^($CellContext`t \
+$CellContext`m$$), $CellContext`$29$$ 
+         E^($CellContext`r$$ $CellContext`t)}, {$CellContext`t, 0, 10}, 
+        PlotLegends -> {
+          StringForm["Discrete with `1` periods", $CellContext`m$$], 
+          "Continuous"}, PlotLabel -> {
+          StringForm[
+          "r=``,m=``,\!\(\*SubscriptBox[\(Q\), \(0\)]\)=``", \
+$CellContext`r$$, $CellContext`m$$, $CellContext`$29$$]}], 
+      "Specifications" :> {{$CellContext`r$$, 0.1, 0.01}, {$CellContext`m$$, 
+         1, 12}, {{$CellContext`$29$$, 1, 
+          RawBoxes[
+           SubscriptBox["Q", "0"]]}, 1, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{588., {193., 198.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5889534286931677`*^9, 3.5889534735308204`*^9}, {
+  3.5889536053972516`*^9, 3.588953623679496*^9}}]
+}, {2}]]
+},
+WindowSize->{707, 816},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1596, 43, 121, "Input"],
+Cell[2178, 67, 2605, 54, 408, "Output"]
+}, {2}]]
+}
+]
+*)
+
+(* End of internal cache information *)

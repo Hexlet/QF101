@@ -3,6 +3,16 @@
 [Tt]humbs.db
 *.DS_Store
 
+#Ignore PP b/c we'll do PDF instead
+*.ppt
+*.pptx
+
+#Camtasia stuff's not needed either. Mind you, neither are the output files
+*.camrec
+*.camproj
+*.mp4
+*.wmv
+
 #Visual Studio files
 *.[Oo]bj
 *.exe
