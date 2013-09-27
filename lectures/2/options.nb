@@ -1,0 +1,246 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9688,        237]
+NotebookOptionsPosition[      9371,        221]
+NotebookOutlinePosition[      9713,        236]
+CellTagsIndexPosition[      9670,        233]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       SubscriptBox["N", "1"], "\[Times]", 
+       RowBox[{"Max", "[", 
+        RowBox[{
+         RowBox[{"S", "-", 
+          SubscriptBox["K", "1"]}], ",", "0"}], "]"}]}], "+", 
+      RowBox[{
+       SubscriptBox["N", "2"], "\[Times]", 
+       RowBox[{"Max", "[", 
+        RowBox[{
+         RowBox[{"S", "-", 
+          SubscriptBox["K", "2"]}], ",", "0"}], "]"}]}], "+", 
+      RowBox[{
+       SubscriptBox["N", "3"], "\[Times]", 
+       RowBox[{"Min", "[", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["K", "3"], "-", "S"}], ",", "0"}], "]"}]}], "+", 
+      RowBox[{
+       SubscriptBox["N", "4"], "\[Times]", 
+       RowBox[{"Min", "[", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["K", "4"], "-", "S"}], ",", "0"}], "]"}]}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"S", ",", "0", ",", "100"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{"StringForm", "[", 
+       RowBox[{
+       "\"\<`` Calls@``, `` Calls@``, `` Puts@``, `` Puts@``\>\"", ",", 
+        SubscriptBox["N", "1"], ",", 
+        SubscriptBox["K", "1"], ",", 
+        SubscriptBox["N", "2"], ",", 
+        SubscriptBox["K", "2"], ",", 
+        SubscriptBox["N", "3"], ",", 
+        SubscriptBox["K", "3"], ",", 
+        SubscriptBox["N", "4"], ",", 
+        SubscriptBox["K", "4"]}], "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["K", "1"], ",", "50", ",", 
+       "\"\<Call Option 1 Strike\>\""}], "}"}], ",", "0", ",", "100", ",", 
+     "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["N", "1"], ",", "1", ",", 
+       "\"\<Number of call options at this strike\>\""}], "}"}], ",", "0", 
+     ",", "5", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["K", "2"], ",", "50", ",", 
+       "\"\<Call Option 2 Strike\>\""}], "}"}], ",", "0", ",", "100", ",", 
+     "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["N", "2"], ",", "0", ",", 
+       "\"\<Number of call options at this strike\>\""}], "}"}], ",", "0", 
+     ",", "5", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["K", "3"], ",", "50", ",", 
+       "\"\<Put Option 1 Strike\>\""}], "}"}], ",", "0", ",", "100", ",", 
+     "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["N", "3"], ",", "0", ",", 
+       "\"\<Number of put options at this strike\>\""}], "}"}], ",", "0", ",",
+      "5", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["K", "4"], ",", "50", ",", 
+       "\"\<Put Option 2 Strike\>\""}], "}"}], ",", "0", ",", "100", ",", 
+     "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["N", "4"], ",", "0", ",", 
+       "\"\<Number of put options at this strike\>\""}], "}"}], ",", "0", ",",
+      "5", ",", "1"}], "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.589180792758723*^9, 3.5891809891352854`*^9}, {
+   3.5891810392514734`*^9, 3.589181056093598*^9}, {3.5891811362595835`*^9, 
+   3.589181253218175*^9}, {3.5891813333621826`*^9, 3.589181412457033*^9}, {
+   3.5891814795124636`*^9, 3.589181522109771*^9}, {3.589181604872038*^9, 
+   3.589181692067916*^9}, {3.5891817566339703`*^9, 3.5891817935256352`*^9}, 
+   3.5891818351348286`*^9, {3.589181882697747*^9, 3.5891821626876287`*^9}, {
+   3.589182229475025*^9, 3.5891822507846184`*^9}, {3.5891822910667095`*^9, 
+   3.5891824417314405`*^9}, {3.5891825134593887`*^9, 3.589182575326107*^9}, {
+   3.589182618283478*^9, 3.5891826614959188`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`$236$$ = 40, $CellContext`$237$$ = 
+    2, $CellContext`$238$$ = 60, $CellContext`$239$$ = 
+    0, $CellContext`$240$$ = 50, $CellContext`$241$$ = 
+    0, $CellContext`$242$$ = 50, $CellContext`$243$$ = 0, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`$236$$], 50, "Call Option 1 Strike"}, 0, 100, 10}, {{
+       Hold[$CellContext`$237$$], 1, "Number of call options at this strike"},
+       0, 5, 1}, {{
+       Hold[$CellContext`$238$$], 50, "Call Option 2 Strike"}, 0, 100, 10}, {{
+       Hold[$CellContext`$239$$], 0, "Number of call options at this strike"},
+       0, 5, 1}, {{
+       Hold[$CellContext`$240$$], 50, "Put Option 1 Strike"}, 0, 100, 10}, {{
+       Hold[$CellContext`$241$$], 0, "Number of put options at this strike"}, 
+      0, 5, 1}, {{
+       Hold[$CellContext`$242$$], 50, "Put Option 2 Strike"}, 0, 100, 10}, {{
+       Hold[$CellContext`$243$$], 0, "Number of put options at this strike"}, 
+      0, 5, 1}}, Typeset`size$$ = {360., {120., 123.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`$236$49676$$ = 0, $CellContext`$237$49677$$ = 
+    0, $CellContext`$238$49678$$ = 0, $CellContext`$239$49679$$ = 
+    0, $CellContext`$240$49680$$ = 0, $CellContext`$241$49681$$ = 
+    0, $CellContext`$242$49682$$ = 0, $CellContext`$243$49683$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`$236$$ = 50, $CellContext`$237$$ = 
+        1, $CellContext`$238$$ = 50, $CellContext`$239$$ = 
+        0, $CellContext`$240$$ = 50, $CellContext`$241$$ = 
+        0, $CellContext`$242$$ = 50, $CellContext`$243$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`$236$$, $CellContext`$236$49676$$, 0], 
+        Hold[$CellContext`$237$$, $CellContext`$237$49677$$, 0], 
+        Hold[$CellContext`$238$$, $CellContext`$238$49678$$, 0], 
+        Hold[$CellContext`$239$$, $CellContext`$239$49679$$, 0], 
+        Hold[$CellContext`$240$$, $CellContext`$240$49680$$, 0], 
+        Hold[$CellContext`$241$$, $CellContext`$241$49681$$, 0], 
+        Hold[$CellContext`$242$$, $CellContext`$242$49682$$, 0], 
+        Hold[$CellContext`$243$$, $CellContext`$243$49683$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[$CellContext`$237$$ 
+         Max[$CellContext`S - $CellContext`$236$$, 0] + $CellContext`$239$$ 
+         Max[$CellContext`S - $CellContext`$238$$, 0] + $CellContext`$241$$ 
+         Min[$CellContext`$240$$ - $CellContext`S, 0] + $CellContext`$243$$ 
+         Min[$CellContext`$242$$ - $CellContext`S, 0], {$CellContext`S, 0, 
+         100}, PlotLabel -> 
+        StringForm[
+         "`` Calls@``, `` Calls@``, `` Puts@``, `` Puts@``", \
+$CellContext`$237$$, $CellContext`$236$$, $CellContext`$239$$, \
+$CellContext`$238$$, $CellContext`$241$$, $CellContext`$240$$, \
+$CellContext`$243$$, $CellContext`$242$$]], 
+      "Specifications" :> {{{$CellContext`$236$$, 50, "Call Option 1 Strike"},
+          0, 100, 
+         10}, {{$CellContext`$237$$, 1, 
+          "Number of call options at this strike"}, 0, 5, 
+         1}, {{$CellContext`$238$$, 50, "Call Option 2 Strike"}, 0, 100, 
+         10}, {{$CellContext`$239$$, 0, 
+          "Number of call options at this strike"}, 0, 5, 
+         1}, {{$CellContext`$240$$, 50, "Put Option 1 Strike"}, 0, 100, 
+         10}, {{$CellContext`$241$$, 0, 
+          "Number of put options at this strike"}, 0, 5, 
+         1}, {{$CellContext`$242$$, 50, "Put Option 2 Strike"}, 0, 100, 
+         10}, {{$CellContext`$243$$, 0, 
+          "Number of put options at this strike"}, 0, 5, 1}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{818., {151., 156.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.589182455779191*^9, {3.589182518533084*^9, 3.5891825757742186`*^9}, 
+   3.5891826622719774`*^9}]
+}, Open  ]]
+},
+WindowSize->{969, 816},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 4160, 110, 272, "Input"],
+Cell[4742, 134, 4613, 84, 324, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
