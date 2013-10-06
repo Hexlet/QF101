@@ -1,6 +1,8 @@
 #pragma pack(push, 4)
 
 // Scheme "scheme" description
+namespace scheme
+{
 
     struct delivery_report
     {
@@ -506,5 +508,6 @@
     const int sys_events_index = 25;
 
 
+}
 
 #pragma pack(pop)

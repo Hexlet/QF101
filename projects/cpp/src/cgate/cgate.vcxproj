@@ -19,11 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FullOrderLog.hpp" />
+    <ClInclude Include="FutInfoRepl.hpp" />
     <ClInclude Include="Headers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Everything.cpp" />
-    <ClCompile Include="FutInfoRepl.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{16CD8376-6AF2-44AC-8F8E-79BD91F67631}</ProjectGuid>
