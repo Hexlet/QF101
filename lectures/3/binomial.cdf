@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1063,         20]
-NotebookDataLength[      7431,        166]
-NotebookOptionsPosition[      7794,        157]
-NotebookOutlinePosition[      8435,        181]
-CellTagsIndexPosition[      8392,        178]
+NotebookDataLength[      7414,        166]
+NotebookOptionsPosition[      7750,        157]
+NotebookOutlinePosition[      8418,        181]
+CellTagsIndexPosition[      8375,        178]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -48,25 +48,25 @@ Cell[BoxData[
        Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 100}, {{
        Hold[$CellContext`X$$], 50, "exercise (or strike) price"}, 10, 100}, {{
        Hold[$CellContext`z$$], 1, "type of option"}, {
-      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {632., {191., 196.}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`t$133187$$ = 0, $CellContext`u$133188$$ = 
-    0, $CellContext`d$133189$$ = 0, $CellContext`r$133190$$ = 
-    0, $CellContext`S$133191$$ = 0, $CellContext`X$133192$$ = 
-    0, $CellContext`z$133193$$ = False}, 
+    True, $CellContext`t$637$$ = 0, $CellContext`u$638$$ = 
+    0, $CellContext`d$639$$ = 0, $CellContext`r$640$$ = 
+    0, $CellContext`S$641$$ = 0, $CellContext`X$642$$ = 
+    0, $CellContext`z$643$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
         0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
         1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`t$$, $CellContext`t$133187$$, 0], 
-        Hold[$CellContext`u$$, $CellContext`u$133188$$, 0], 
-        Hold[$CellContext`d$$, $CellContext`d$133189$$, 0], 
-        Hold[$CellContext`r$$, $CellContext`r$133190$$, 0], 
-        Hold[$CellContext`S$$, $CellContext`S$133191$$, 0], 
-        Hold[$CellContext`X$$, $CellContext`X$133192$$, 0], 
-        Hold[$CellContext`z$$, $CellContext`z$133193$$, False]}, 
+        Hold[$CellContext`t$$, $CellContext`t$637$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$638$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$639$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$640$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$641$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$642$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$643$$, False]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -82,8 +82,8 @@ $CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
           1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
 $CellContext`finalnodes := Map[Table[
            
-           Max[$CellContext`z$$ (($CellContext`S$$ \
-$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+           Max[$CellContext`z$$ ($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m $CellContext`d$$^(# - $CellContext`m) - \
 $CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
           4}]; $CellContext`nodes[
           Pattern[$CellContext`l, 
@@ -144,7 +144,7 @@ $CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]),
 $CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
 $CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
       "DefaultOptions" :> {ControllerLinking -> True}],
-     ImageSizeCache->{669., {203., 208.}},
+     ImageSizeCache->{951., {222., 227.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -155,10 +155,10 @@ $CellContext`z$$}, AutorunSequencing -> {1, 3, 5}},
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output", "PluginEmbeddedContent"]
 },
-WindowSize->{713, 425},
-WindowMargins->{{595, Automatic}, {Automatic, 258}},
+WindowSize->{1012, 464},
+WindowMargins->{{445, Automatic}, {Automatic, 239}},
 Visible->True,
-AuthoredSize->{713.38, 425.39},
+AuthoredSize->{1012.3000000000001`, 464.53000000000003`},
 ScrollingOptions->{"HorizontalScrollRange"->Fit,
 "VerticalScrollRange"->Fit},
 ShowCellBracket->False,
@@ -180,11 +180,11 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1463, 33, 6327, 122, 413, "Output"]
+Cell[1463, 33, 6283, 122, 451, "Output"]
 }
 ]
 *)
 
 (* End of internal cache information *)
 
-(* NotebookSignature vxDhgMLf2JE9tAwAOu7An@M6 *)
+(* NotebookSignature 1xDwpCqd2gfq5BgUdjFePAxE *)
