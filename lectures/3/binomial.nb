@@ -1,0 +1,1394 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     57981,       1385]
+NotebookOptionsPosition[     53903,       1258]
+NotebookOutlinePosition[     55501,       1308]
+CellTagsIndexPosition[     55173,       1296]
+WindowFrame->Normal
+ContainsDynamic->True *)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Binomial Option Pricing Model", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38006657525*^9, 3.38006658728125*^9}, {
+   3.380135525234375*^9, 3.380135525421875*^9}},
+ CellID->700863240],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"singlenode", "[", 
+      RowBox[{"{", 
+       RowBox[{"Vd_", ",", " ", "Vu_"}], "}"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"Vd", "-", "Vu"}], 
+        RowBox[{
+         RowBox[{"-", "d"}], "+", "u"}]]}], "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"u", " ", "Vd"}], "-", 
+        RowBox[{"d", " ", "Vu"}]}], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", "r"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"d", "-", "u"}], ")"}]}]]}]}], ";", "\[IndentingNewLine]", 
+    " ", 
+    RowBox[{"finalnodes", ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Max", "[", 
+          RowBox[{
+           RowBox[{"z", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"S", " ", 
+               RowBox[{"u", "^", "m"}], "  ", 
+               RowBox[{"d", "^", 
+                RowBox[{"(", 
+                 RowBox[{"#", "-", "m"}], ")"}]}]}], "-", "X"}], ")"}]}], ",",
+            "0"}], "]"}], ",", "  ", 
+         RowBox[{"{", 
+          RowBox[{"m", ",", "0", ",", "#"}], "}"}]}], "]"}], "&"}], "/@", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"nodes", "[", "l_List", "]"}], ":=", " ", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"singlenode", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"l", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", " ", 
+             RowBox[{"l", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", "+", "1"}], "]"}], "]"}]}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", " ", 
+             RowBox[{
+              RowBox[{"Length", "[", "l", "]"}], "-", "1"}]}], "}"}]}], "]"}],
+          "\[IndentingNewLine]", "[", 
+         RowBox[{"[", "j", "]"}], "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", 
+         RowBox[{
+          RowBox[{"Length", "[", "l", "]"}], "-", "1"}]}], "}"}]}], "]"}]}], 
+    ";", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"optionrules", "[", "t_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"2", "\[Rule]", "1"}], ",", 
+        RowBox[{"3", "\[Rule]", "1"}], ",", 
+        RowBox[{"4", "\[Rule]", "2"}], ",", 
+        RowBox[{"5", "\[Rule]", "2"}], ",", 
+        RowBox[{"5", "\[Rule]", "3"}], ",", 
+        RowBox[{"6", "\[Rule]", "3"}], ",", 
+        RowBox[{"7", "\[Rule]", "4"}], ",", 
+        RowBox[{"8", "\[Rule]", "4"}], ",", 
+        RowBox[{"8", "\[Rule]", "5"}], ",", 
+        RowBox[{"9", "\[Rule]", "5"}], ",", 
+        RowBox[{"9", "\[Rule]", "6"}], ",", 
+        RowBox[{"10", "\[Rule]", "6"}], ",", 
+        RowBox[{"11", "\[Rule]", "7"}], ",", 
+        RowBox[{"12", "\[Rule]", "7"}], ",", 
+        RowBox[{"12", "\[Rule]", "8"}], ",", 
+        RowBox[{"13", "\[Rule]", "8"}], ",", 
+        RowBox[{"13", "\[Rule]", "9"}], ",", 
+        RowBox[{"14", "\[Rule]", "9"}], ",", 
+        RowBox[{"14", "\[Rule]", "10"}], ",", 
+        RowBox[{"15", "\[Rule]", "10"}]}], "}"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"Range", "[", 
+        RowBox[{"nr", "[", 
+         RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}], "]"}]}], ";", 
+    RowBox[{"nr", "=", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "6", ",", "12", ",", "20"}], "}"}]}], ";", 
+    RowBox[{"nn", "=", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6", ",", "10", ",", "15"}], "}"}]}], ";", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+    RowBox[{"TreePlot", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"optionrules", "[", "t", "]"}], "/.", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Range", "[", 
+            RowBox[{"nn", "[", 
+             RowBox[{"[", "t", "]"}], "]"}], "]"}], "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "\[Rule]", 
+          RowBox[{"NumberForm", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{"Reverse", "[", 
+               RowBox[{"NestList", "[", 
+                RowBox[{"nodes", ",", 
+                 RowBox[{"finalnodes", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}], ",", "t"}], "]"}], "]"}], 
+              "]"}], "[", 
+             RowBox[{"[", "i", "]"}], "]"}], ",", "4"}], "]"}]}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{"nn", "[", 
+            RowBox[{"[", "t", "]"}], "]"}]}], "}"}]}], "]"}]}], ",", " ", 
+      "Left", ",", " ", 
+      RowBox[{"DirectedEdges", "\[Rule]", "True"}], ",", " ", 
+      RowBox[{"VertexLabeling", "\[Rule]", "True"}], ",", " ", 
+      RowBox[{"AspectRatio", "\[Rule]", ".75"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<option value = \>\"", ",", " ", 
+            RowBox[{"NumberForm", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"Nest", "[", 
+                RowBox[{"nodes", ",", 
+                 RowBox[{"finalnodes", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}], ",", "t"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], ",", "4"}], "]"}]}], "}"}], 
+          "]"}], ",", "\"\<Label\>\""}], "]"}]}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"350", ",", "350"}], "}"}]}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "2", ",", "\"\<periods\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "SetterBar"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"u", ",", "1.1", ",", " ", "\"\<up factor\>\""}], "}"}], ",", 
+     " ", "1.01", ",", "2", ",", " ", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", ".91", ",", " ", "\"\<down factor\>\""}], "}"}], ",", 
+     " ", ".5", ",", ".99", ",", " ", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "r", ",", " ", ".1", ",", " ", "\"\<one-period interest rate\>\""}], 
+      "}"}], ",", " ", ".01", ",", ".25", ",", " ", ".01", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"S", ",", "50", ",", "\"\<initial price of underlying\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"X", ",", "50", ",", "\"\<exercise (or strike) price\>\""}], 
+      "}"}], ",", " ", "10", ",", "100", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", "1", ",", "\"\<type of option\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "\[Rule]", "\"\<call\>\""}], ",", 
+       RowBox[{
+        RowBox[{"-", "1"}], "\[Rule]", "\"\<put\>\""}]}], "}"}], ",", " ", 
+     RowBox[{"ControlType", "\[Rule]", "RadioButtonBar"}]}], "}"}], ",", " ", 
+   
+   RowBox[{"ControlPlacement", "\[Rule]", "Left"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{
+     "t", ",", "u", ",", "d", ",", "r", ",", "S", ",", "X", ",", "z"}], 
+     "}"}]}], ",", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "5"}], "}"}]}]}], " ", "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.3800666276875*^9, 3.380066634484375*^9}, 
+   3.38006668275*^9, {3.380135167453125*^9, 3.38013521878125*^9}, {
+   3.38013541625*^9, 3.380135432375*^9}, {3.380135578046875*^9, 
+   3.3801356008125*^9}, {3.381350032953125*^9, 3.381350033546875*^9}, {
+   3.38135012853125*^9, 3.38135012896875*^9}, {3.3813515073125*^9, 
+   3.381351516015625*^9}, {3.382645346234375*^9, 3.382645346453125*^9}},
+ CellID->1496021318],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+    0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+    1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 2, "periods"}, {1, 2, 3, 4}}, {{
+       Hold[$CellContext`u$$], 1.1, "up factor"}, 1.01, 2, 0.01}, {{
+       Hold[$CellContext`d$$], 0.91, "down factor"}, 0.5, 0.99, 0.01}, {{
+       Hold[$CellContext`r$$], 0.1, "one-period interest rate"}, 0.01, 0.25, 
+      0.01}, {{
+       Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 
+      100}, {{
+       Hold[$CellContext`X$$], 50, "exercise (or strike) price"}, 10, 100}, {{
+      
+       Hold[$CellContext`z$$], 1, "type of option"}, {
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$133187$$ = 0, $CellContext`u$133188$$ = 
+    0, $CellContext`d$133189$$ = 0, $CellContext`r$133190$$ = 
+    0, $CellContext`S$133191$$ = 0, $CellContext`X$133192$$ = 
+    0, $CellContext`z$133193$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+        0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+        1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$133187$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$133188$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$133189$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$133190$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$133191$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$133192$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$133193$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`singlenode[{
+           Pattern[$CellContext`Vd$, 
+            Blank[]], 
+           Pattern[$CellContext`Vu$, 
+            
+            Blank[]]}] := -(($CellContext`Vd$ - \
+$CellContext`Vu$)/(-$CellContext`d$$ + $CellContext`u$$)) - ($CellContext`u$$ \
+$CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
+          1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
+$CellContext`finalnodes := Map[Table[
+           
+           Max[$CellContext`z$$ (($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+$CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
+          4}]; $CellContext`nodes[
+          Pattern[$CellContext`l, 
+           Blank[List]]] := Table[
+          $CellContext`singlenode[
+           Part[
+            Table[{
+              Part[$CellContext`l, $CellContext`i], 
+              Part[$CellContext`l, $CellContext`i + 1]}, {$CellContext`i, 
+              Length[$CellContext`l] - 1}], $CellContext`j]], {$CellContext`j,
+            Length[$CellContext`l] - 1}]; $CellContext`optionrules[
+          Pattern[$CellContext`t, 
+           Blank[]]] := 
+        Part[{2 -> 1, 3 -> 1, 4 -> 2, 5 -> 2, 5 -> 3, 6 -> 3, 7 -> 4, 8 -> 4, 
+           8 -> 5, 9 -> 5, 9 -> 6, 10 -> 6, 11 -> 7, 12 -> 7, 12 -> 8, 13 -> 
+           8, 13 -> 9, 14 -> 9, 14 -> 10, 15 -> 10}, 
+          Range[
+           Part[$CellContext`nr, $CellContext`t]]]; $CellContext`nr = {2, 6, 
+         12, 20}; $CellContext`nn = {3, 6, 10, 15}; TreePlot[
+         ReplaceAll[
+          $CellContext`optionrules[$CellContext`t$$], 
+          Table[Part[
+             Range[
+              Part[$CellContext`nn, $CellContext`t$$]], $CellContext`i] -> 
+           NumberForm[
+             Part[
+              Flatten[
+               Reverse[
+                NestList[$CellContext`nodes, 
+                 
+                 Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$]]], $CellContext`i], 4], {$CellContext`i, 
+            Part[$CellContext`nn, $CellContext`t$$]}]], Left, DirectedEdges -> 
+         True, VertexLabeling -> True, AspectRatio -> 0.75, PlotLabel -> 
+         Style[
+           Row[{"option value = ", 
+             NumberForm[
+              Part[
+               Nest[$CellContext`nodes, 
+                
+                Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`t$$, 2, "periods"}, {1, 2, 3, 4}, 
+         ControlType -> SetterBar}, {{$CellContext`u$$, 1.1, "up factor"}, 
+         1.01, 2, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`d$$, 0.91, "down factor"}, 0.5, 0.99, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`r$$, 0.1, "one-period interest rate"}, 0.01, 
+         0.25, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`S$$, 50, "initial price of underlying"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`X$$, 50, "exercise (or strike) price"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`z$$, 1, "type of option"}, {
+         1 -> "call", -1 -> "put"}, ControlType -> RadioButtonBar}}, 
+      "Options" :> {
+       ControlPlacement -> Left, 
+        TrackedSymbols :> {$CellContext`t$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
+$CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{632., {200., 205.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->580603476]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell["\<\
+The binomial option pricing model proceeds from the assumption that the value \
+of the underlying asset follows an evolution such that in each period it \
+increases by a fixed proportion (the up factor) or decreases by another (the \
+down factor). Using a binomial tree one can project all possible values of \
+the underlying asset at the option's expiration date, and from them, all \
+possible final values for the option. To find the current value of the \
+option, one needs to work backwards through the tree starting with the known \
+final option values. The key is to recognize that it is always possible to \
+create a portfolio made up of a position in the underlying asset combined \
+with a position in the lending market that will have the same next period \
+value as the option. The restricted assumptions about the movements in the \
+value of the underlying asset imply that there is enough information to \
+determine the portfolio weights and thus the value of the replicating \
+portfolio. Under the assumption of no-arbitrage, the replicating portfolio \
+must have the same value as the option. \
+\>", "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38006672*^9, 3.380066792578125*^9}, {
+   3.38006688278125*^9, 3.380066889546875*^9}, 3.3821909370966434`*^9},
+ CellID->1044312921]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+    0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+    1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 2, "periods"}, {1, 2, 3, 4}}, {{
+       Hold[$CellContext`u$$], 1.1, "up factor"}, 1.01, 2, 0.01}, {{
+       Hold[$CellContext`d$$], 0.91, "down factor"}, 0.5, 0.99, 0.01}, {{
+       Hold[$CellContext`r$$], 0.1, "one-period interest rate"}, 0.01, 0.25, 
+      0.01}, {{
+       Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 
+      100}, {{
+       Hold[$CellContext`X$$], 50, "exercise (or strike) price"}, 10, 100}, {{
+      
+       Hold[$CellContext`z$$], 1, "type of option"}, {
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$133277$$ = 0, $CellContext`u$133278$$ = 
+    0, $CellContext`d$133279$$ = 0, $CellContext`r$133280$$ = 
+    0, $CellContext`S$133281$$ = 0, $CellContext`X$133282$$ = 
+    0, $CellContext`z$133283$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+        0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+        1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$133277$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$133278$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$133279$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$133280$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$133281$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$133282$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$133283$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`singlenode[{
+           Pattern[$CellContext`Vd$, 
+            Blank[]], 
+           Pattern[$CellContext`Vu$, 
+            
+            Blank[]]}] := -(($CellContext`Vd$ - \
+$CellContext`Vu$)/(-$CellContext`d$$ + $CellContext`u$$)) - ($CellContext`u$$ \
+$CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
+          1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
+$CellContext`finalnodes := Map[Table[
+           
+           Max[$CellContext`z$$ (($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+$CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
+          4}]; $CellContext`nodes[
+          Pattern[$CellContext`l, 
+           Blank[List]]] := Table[
+          $CellContext`singlenode[
+           Part[
+            Table[{
+              Part[$CellContext`l, $CellContext`i], 
+              Part[$CellContext`l, $CellContext`i + 1]}, {$CellContext`i, 
+              Length[$CellContext`l] - 1}], $CellContext`j]], {$CellContext`j,
+            Length[$CellContext`l] - 1}]; $CellContext`optionrules[
+          Pattern[$CellContext`t, 
+           Blank[]]] := 
+        Part[{2 -> 1, 3 -> 1, 4 -> 2, 5 -> 2, 5 -> 3, 6 -> 3, 7 -> 4, 8 -> 4, 
+           8 -> 5, 9 -> 5, 9 -> 6, 10 -> 6, 11 -> 7, 12 -> 7, 12 -> 8, 13 -> 
+           8, 13 -> 9, 14 -> 9, 14 -> 10, 15 -> 10}, 
+          Range[
+           Part[$CellContext`nr, $CellContext`t]]]; $CellContext`nr = {2, 6, 
+         12, 20}; $CellContext`nn = {3, 6, 10, 15}; TreePlot[
+         ReplaceAll[
+          $CellContext`optionrules[$CellContext`t$$], 
+          Table[Part[
+             Range[
+              Part[$CellContext`nn, $CellContext`t$$]], $CellContext`i] -> 
+           NumberForm[
+             Part[
+              Flatten[
+               Reverse[
+                NestList[$CellContext`nodes, 
+                 
+                 Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$]]], $CellContext`i], 4], {$CellContext`i, 
+            Part[$CellContext`nn, $CellContext`t$$]}]], Left, DirectedEdges -> 
+         True, VertexLabeling -> True, AspectRatio -> 0.75, PlotLabel -> 
+         Style[
+           Row[{"option value = ", 
+             NumberForm[
+              Part[
+               Nest[$CellContext`nodes, 
+                
+                Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`t$$, 2, "periods"}, {1, 2, 3, 4}, 
+         ControlType -> SetterBar}, {{$CellContext`u$$, 1.1, "up factor"}, 
+         1.01, 2, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`d$$, 0.91, "down factor"}, 0.5, 0.99, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`r$$, 0.1, "one-period interest rate"}, 0.01, 
+         0.25, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`S$$, 50, "initial price of underlying"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`X$$, 50, "exercise (or strike) price"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`z$$, 1, "type of option"}, {
+         1 -> "call", -1 -> "put"}, ControlType -> RadioButtonBar}}, 
+      "Options" :> {
+       ControlPlacement -> Left, 
+        TrackedSymbols :> {$CellContext`t$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
+$CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{632., {200., 205.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->9173383]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+    0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 4, $CellContext`u$$ = 
+    1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 4, "periods"}, {1, 2, 3, 4}}, {{
+       Hold[$CellContext`u$$], 1.1, "up factor"}, 1.01, 2, 0.01}, {{
+       Hold[$CellContext`d$$], 0.91, "down factor"}, 0.5, 0.99, 0.01}, {{
+       Hold[$CellContext`r$$], 0.1, "one-period interest rate"}, 0.01, 0.25, 
+      0.01}, {{
+       Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 
+      100}, {{
+       Hold[$CellContext`X$$], 50, "exercise (or strike) price"}, 10, 100}, {{
+      
+       Hold[$CellContext`z$$], 1, "type of option"}, {
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$133367$$ = 0, $CellContext`u$133368$$ = 
+    0, $CellContext`d$133369$$ = 0, $CellContext`r$133370$$ = 
+    0, $CellContext`S$133371$$ = 0, $CellContext`X$133372$$ = 
+    0, $CellContext`z$133373$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+        0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 4, $CellContext`u$$ = 
+        1.1, $CellContext`X$$ = 50, $CellContext`z$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$133367$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$133368$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$133369$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$133370$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$133371$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$133372$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$133373$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`singlenode[{
+           Pattern[$CellContext`Vd$, 
+            Blank[]], 
+           Pattern[$CellContext`Vu$, 
+            
+            Blank[]]}] := -(($CellContext`Vd$ - \
+$CellContext`Vu$)/(-$CellContext`d$$ + $CellContext`u$$)) - ($CellContext`u$$ \
+$CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
+          1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
+$CellContext`finalnodes := Map[Table[
+           
+           Max[$CellContext`z$$ (($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+$CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
+          4}]; $CellContext`nodes[
+          Pattern[$CellContext`l, 
+           Blank[List]]] := Table[
+          $CellContext`singlenode[
+           Part[
+            Table[{
+              Part[$CellContext`l, $CellContext`i], 
+              Part[$CellContext`l, $CellContext`i + 1]}, {$CellContext`i, 
+              Length[$CellContext`l] - 1}], $CellContext`j]], {$CellContext`j,
+            Length[$CellContext`l] - 1}]; $CellContext`optionrules[
+          Pattern[$CellContext`t, 
+           Blank[]]] := 
+        Part[{2 -> 1, 3 -> 1, 4 -> 2, 5 -> 2, 5 -> 3, 6 -> 3, 7 -> 4, 8 -> 4, 
+           8 -> 5, 9 -> 5, 9 -> 6, 10 -> 6, 11 -> 7, 12 -> 7, 12 -> 8, 13 -> 
+           8, 13 -> 9, 14 -> 9, 14 -> 10, 15 -> 10}, 
+          Range[
+           Part[$CellContext`nr, $CellContext`t]]]; $CellContext`nr = {2, 6, 
+         12, 20}; $CellContext`nn = {3, 6, 10, 15}; TreePlot[
+         ReplaceAll[
+          $CellContext`optionrules[$CellContext`t$$], 
+          Table[Part[
+             Range[
+              Part[$CellContext`nn, $CellContext`t$$]], $CellContext`i] -> 
+           NumberForm[
+             Part[
+              Flatten[
+               Reverse[
+                NestList[$CellContext`nodes, 
+                 
+                 Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$]]], $CellContext`i], 4], {$CellContext`i, 
+            Part[$CellContext`nn, $CellContext`t$$]}]], Left, DirectedEdges -> 
+         True, VertexLabeling -> True, AspectRatio -> 0.75, PlotLabel -> 
+         Style[
+           Row[{"option value = ", 
+             NumberForm[
+              Part[
+               Nest[$CellContext`nodes, 
+                
+                Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`t$$, 4, "periods"}, {1, 2, 3, 4}, 
+         ControlType -> SetterBar}, {{$CellContext`u$$, 1.1, "up factor"}, 
+         1.01, 2, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`d$$, 0.91, "down factor"}, 0.5, 0.99, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`r$$, 0.1, "one-period interest rate"}, 0.01, 
+         0.25, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`S$$, 50, "initial price of underlying"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`X$$, 50, "exercise (or strike) price"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`z$$, 1, "type of option"}, {
+         1 -> "call", -1 -> "put"}, ControlType -> RadioButtonBar}}, 
+      "Options" :> {
+       ControlPlacement -> Left, 
+        TrackedSymbols :> {$CellContext`t$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
+$CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{632., {200., 205.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->229014970],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+    0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+    1.1, $CellContext`X$$ = 50, $CellContext`z$$ = -1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 2, "periods"}, {1, 2, 3, 4}}, {{
+       Hold[$CellContext`u$$], 1.1, "up factor"}, 1.01, 2, 0.01}, {{
+       Hold[$CellContext`d$$], 0.91, "down factor"}, 0.5, 0.99, 0.01}, {{
+       Hold[$CellContext`r$$], 0.1, "one-period interest rate"}, 0.01, 0.25, 
+      0.01}, {{
+       Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 
+      100}, {{
+       Hold[$CellContext`X$$], 50, "exercise (or strike) price"}, 10, 100}, {{
+      
+       Hold[$CellContext`z$$], -1, "type of option"}, {
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$133457$$ = 0, $CellContext`u$133458$$ = 
+    0, $CellContext`d$133459$$ = 0, $CellContext`r$133460$$ = 
+    0, $CellContext`S$133461$$ = 0, $CellContext`X$133462$$ = 
+    0, $CellContext`z$133463$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+        0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 2, $CellContext`u$$ = 
+        1.1, $CellContext`X$$ = 50, $CellContext`z$$ = -1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$133457$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$133458$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$133459$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$133460$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$133461$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$133462$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$133463$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`singlenode[{
+           Pattern[$CellContext`Vd$, 
+            Blank[]], 
+           Pattern[$CellContext`Vu$, 
+            
+            Blank[]]}] := -(($CellContext`Vd$ - \
+$CellContext`Vu$)/(-$CellContext`d$$ + $CellContext`u$$)) - ($CellContext`u$$ \
+$CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
+          1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
+$CellContext`finalnodes := Map[Table[
+           
+           Max[$CellContext`z$$ (($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+$CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
+          4}]; $CellContext`nodes[
+          Pattern[$CellContext`l, 
+           Blank[List]]] := Table[
+          $CellContext`singlenode[
+           Part[
+            Table[{
+              Part[$CellContext`l, $CellContext`i], 
+              Part[$CellContext`l, $CellContext`i + 1]}, {$CellContext`i, 
+              Length[$CellContext`l] - 1}], $CellContext`j]], {$CellContext`j,
+            Length[$CellContext`l] - 1}]; $CellContext`optionrules[
+          Pattern[$CellContext`t, 
+           Blank[]]] := 
+        Part[{2 -> 1, 3 -> 1, 4 -> 2, 5 -> 2, 5 -> 3, 6 -> 3, 7 -> 4, 8 -> 4, 
+           8 -> 5, 9 -> 5, 9 -> 6, 10 -> 6, 11 -> 7, 12 -> 7, 12 -> 8, 13 -> 
+           8, 13 -> 9, 14 -> 9, 14 -> 10, 15 -> 10}, 
+          Range[
+           Part[$CellContext`nr, $CellContext`t]]]; $CellContext`nr = {2, 6, 
+         12, 20}; $CellContext`nn = {3, 6, 10, 15}; TreePlot[
+         ReplaceAll[
+          $CellContext`optionrules[$CellContext`t$$], 
+          Table[Part[
+             Range[
+              Part[$CellContext`nn, $CellContext`t$$]], $CellContext`i] -> 
+           NumberForm[
+             Part[
+              Flatten[
+               Reverse[
+                NestList[$CellContext`nodes, 
+                 
+                 Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$]]], $CellContext`i], 4], {$CellContext`i, 
+            Part[$CellContext`nn, $CellContext`t$$]}]], Left, DirectedEdges -> 
+         True, VertexLabeling -> True, AspectRatio -> 0.75, PlotLabel -> 
+         Style[
+           Row[{"option value = ", 
+             NumberForm[
+              Part[
+               Nest[$CellContext`nodes, 
+                
+                Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`t$$, 2, "periods"}, {1, 2, 3, 4}, 
+         ControlType -> SetterBar}, {{$CellContext`u$$, 1.1, "up factor"}, 
+         1.01, 2, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`d$$, 0.91, "down factor"}, 0.5, 0.99, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`r$$, 0.1, "one-period interest rate"}, 0.01, 
+         0.25, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`S$$, 50, "initial price of underlying"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`X$$, 50, "exercise (or strike) price"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`z$$, -1, "type of option"}, {
+         1 -> "call", -1 -> "put"}, ControlType -> RadioButtonBar}}, 
+      "Options" :> {
+       ControlPlacement -> Left, 
+        TrackedSymbols :> {$CellContext`t$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
+$CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{632., {200., 205.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->509445033],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+    0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 4, $CellContext`u$$ = 
+    1.1, $CellContext`X$$ = 32., $CellContext`z$$ = -1, Typeset`show$$ = True,
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 4, "periods"}, {1, 2, 3, 4}}, {{
+       Hold[$CellContext`u$$], 1.1, "up factor"}, 1.01, 2, 0.01}, {{
+       Hold[$CellContext`d$$], 0.91, "down factor"}, 0.5, 0.99, 0.01}, {{
+       Hold[$CellContext`r$$], 0.1, "one-period interest rate"}, 0.01, 0.25, 
+      0.01}, {{
+       Hold[$CellContext`S$$], 50, "initial price of underlying"}, 10, 
+      100}, {{
+       Hold[$CellContext`X$$], 32., "exercise (or strike) price"}, 10, 
+      100}, {{
+       Hold[$CellContext`z$$], -1, "type of option"}, {
+      1 -> "call", -1 -> "put"}}}, Typeset`size$$ = {350., {173., 177.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$133547$$ = 0, $CellContext`u$133548$$ = 
+    0, $CellContext`d$133549$$ = 0, $CellContext`r$133550$$ = 
+    0, $CellContext`S$133551$$ = 0, $CellContext`X$133552$$ = 
+    0, $CellContext`z$133553$$ = False}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = 0.91, $CellContext`r$$ = 
+        0.1, $CellContext`S$$ = 50, $CellContext`t$$ = 4, $CellContext`u$$ = 
+        1.1, $CellContext`X$$ = 32., $CellContext`z$$ = -1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$133547$$, 0], 
+        Hold[$CellContext`u$$, $CellContext`u$133548$$, 0], 
+        Hold[$CellContext`d$$, $CellContext`d$133549$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$133550$$, 0], 
+        Hold[$CellContext`S$$, $CellContext`S$133551$$, 0], 
+        Hold[$CellContext`X$$, $CellContext`X$133552$$, 0], 
+        Hold[$CellContext`z$$, $CellContext`z$133553$$, False]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ($CellContext`singlenode[{
+           Pattern[$CellContext`Vd$, 
+            Blank[]], 
+           Pattern[$CellContext`Vu$, 
+            
+            Blank[]]}] := -(($CellContext`Vd$ - \
+$CellContext`Vu$)/(-$CellContext`d$$ + $CellContext`u$$)) - ($CellContext`u$$ \
+$CellContext`Vd$ - $CellContext`d$$ $CellContext`Vu$)/((
+          1 + $CellContext`r$$) ($CellContext`d$$ - $CellContext`u$$)); \
+$CellContext`finalnodes := Map[Table[
+           
+           Max[$CellContext`z$$ (($CellContext`S$$ \
+$CellContext`u$$^$CellContext`m) $CellContext`d$$^(# - $CellContext`m) - \
+$CellContext`X$$), 0], {$CellContext`m, 0, #}]& , {1, 2, 3, 
+          4}]; $CellContext`nodes[
+          Pattern[$CellContext`l, 
+           Blank[List]]] := Table[
+          $CellContext`singlenode[
+           Part[
+            Table[{
+              Part[$CellContext`l, $CellContext`i], 
+              Part[$CellContext`l, $CellContext`i + 1]}, {$CellContext`i, 
+              Length[$CellContext`l] - 1}], $CellContext`j]], {$CellContext`j,
+            Length[$CellContext`l] - 1}]; $CellContext`optionrules[
+          Pattern[$CellContext`t, 
+           Blank[]]] := 
+        Part[{2 -> 1, 3 -> 1, 4 -> 2, 5 -> 2, 5 -> 3, 6 -> 3, 7 -> 4, 8 -> 4, 
+           8 -> 5, 9 -> 5, 9 -> 6, 10 -> 6, 11 -> 7, 12 -> 7, 12 -> 8, 13 -> 
+           8, 13 -> 9, 14 -> 9, 14 -> 10, 15 -> 10}, 
+          Range[
+           Part[$CellContext`nr, $CellContext`t]]]; $CellContext`nr = {2, 6, 
+         12, 20}; $CellContext`nn = {3, 6, 10, 15}; TreePlot[
+         ReplaceAll[
+          $CellContext`optionrules[$CellContext`t$$], 
+          Table[Part[
+             Range[
+              Part[$CellContext`nn, $CellContext`t$$]], $CellContext`i] -> 
+           NumberForm[
+             Part[
+              Flatten[
+               Reverse[
+                NestList[$CellContext`nodes, 
+                 
+                 Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$]]], $CellContext`i], 4], {$CellContext`i, 
+            Part[$CellContext`nn, $CellContext`t$$]}]], Left, DirectedEdges -> 
+         True, VertexLabeling -> True, AspectRatio -> 0.75, PlotLabel -> 
+         Style[
+           Row[{"option value = ", 
+             NumberForm[
+              Part[
+               Nest[$CellContext`nodes, 
+                
+                Part[$CellContext`finalnodes, $CellContext`t$$], \
+$CellContext`t$$], 1], 4]}], "Label"], ImageSize -> {350, 350}]), 
+      "Specifications" :> {{{$CellContext`t$$, 4, "periods"}, {1, 2, 3, 4}, 
+         ControlType -> SetterBar}, {{$CellContext`u$$, 1.1, "up factor"}, 
+         1.01, 2, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`d$$, 0.91, "down factor"}, 0.5, 0.99, 0.01, 
+         Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`r$$, 0.1, "one-period interest rate"}, 0.01, 
+         0.25, 0.01, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`S$$, 50, "initial price of underlying"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`X$$, 32., "exercise (or strike) price"}, 10, 
+         100, Appearance -> "Labeled", ImageSize -> 
+         Tiny}, {{$CellContext`z$$, -1, "type of option"}, {
+         1 -> "call", -1 -> "put"}, ControlType -> RadioButtonBar}}, 
+      "Options" :> {
+       ControlPlacement -> Left, 
+        TrackedSymbols :> {$CellContext`t$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`S$$, $CellContext`X$$, \
+$CellContext`z$$}, AutorunSequencing -> {1, 3, 5}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{632., {200., 205.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->274149335]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell[TextData[{
+ "The weights for the two components in the replicating portfolio are \
+determined by solving two equations in two unknowns. Take any node in the \
+option value tree one period before expiration. From that node, there are two \
+branches: one representing the final value of the option if the underlying \
+goes up in price in the final period (call it ",
+ Cell[BoxData[
+  FormBox[Cell[TextData[Cell[BoxData[
+    FormBox[
+     SubscriptBox["V", "u"], TraditionalForm]]]], "InlineMath"], 
+   TraditionalForm]]],
+ ") and the other, the final value of the option if the underlying goes down \
+in price in the final period (call it ",
+ Cell[BoxData[
+  FormBox[Cell[TextData[Cell[BoxData[
+    FormBox[
+     SubscriptBox["V", "d"], TraditionalForm]]]], "InlineMath"], 
+   TraditionalForm]]],
+ "). Let ",
+ Cell[BoxData[
+  FormBox["\[Delta]", TraditionalForm]], "InlineMath"],
+ " represent the investment in the underlying asset in the replicating \
+portfolio and let ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]], "InlineMath"],
+ " represent the number of units of money that are borrowed or lent at the \
+one-period interest rate, ",
+ Cell[BoxData[
+  FormBox["r", TraditionalForm]], "InlineMath"],
+ ". Finally, let ",
+ Cell[BoxData[
+  FormBox["S", TraditionalForm]], "InlineMath"],
+ " be the price of the underlying at our chosen node, which we can deduce \
+from the binomial tree for the price of the underlying. Since the value of \
+the replicating portfolio in the final period is to be equal to the value of \
+the option in the final period, the following two equations must hold, and \
+can be solved to obtain expressions for ",
+ Cell[BoxData[
+  FormBox["\[Delta]", TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]], "InlineMath"],
+ ":\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["V", "u"], " ", "=", 
+    RowBox[{
+     RowBox[{"\[Delta]", " ", "S", " ", "u"}], "+", 
+     RowBox[{"B", "(", 
+      RowBox[{"1", "+", "r"}], ")"}]}]}], TraditionalForm]], "InlineMath"],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["V", "d"], " ", "=", 
+    RowBox[{
+     RowBox[{"\[Delta]", " ", "S", " ", "d"}], "+", 
+     RowBox[{"B", "(", 
+      RowBox[{"1", "+", "r"}], ")"}]}]}], TraditionalForm]], "InlineMath"],
+ "\n\nFor a call option, the replicating portfolio will consist of a long \
+position in the underlying, partially financed by borrowing in the money \
+market. For a put option, it consists of a short position in the underlying, \
+combined with lending in the money market. To obtain the value of the option \
+at the chosen node, the expressions for ",
+ Cell[BoxData[
+  FormBox["\[Delta]", TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox["B", TraditionalForm]], "InlineMath"],
+ " are substituted into the expression for the value of the replicating \
+portfolio in that period, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Delta]", " ", "S"}], "+", "B"}], TraditionalForm]], 
+  "InlineMath"],
+ ". The same procedure can be done on all the nodes one-period from \
+expiration. Once all the values of the option one-period from expiration are \
+determined, one can move back through the tree and perform the same operation \
+on all the nodes two periods before expiration, and so on, until the single \
+node representing the current value of the option is reached."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.382190873502486*^9, 3.382190874314991*^9}, 
+   3.3821909070027003`*^9, {3.382190944487315*^9, 3.3821909722062426`*^9}, {
+   3.3826454238125*^9, 3.382645599078125*^9}, 3.382645661796875*^9, {
+   3.382904214239725*^9, 3.382904214552225*^9}},
+ CellID->453698864]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0], BoxBaselineShift -> 
+     0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  ActionDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["Cox", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38006732190625*^9, 3.380067323796875*^9}},
+ CellID->115212848],
+
+Cell["Ross", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.380067324328125*^9, 3.38006732553125*^9}},
+ CellID->837612703],
+
+Cell["Rubinstein", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.380067326078125*^9, 3.38006733753125*^9}},
+ CellID->97351179],
+
+Cell["CRR", "SearchTerms",
+ CellChangeTimes->{3.35696210375764*^9, {3.380067339*^9, 3.380067340625*^9}},
+ CellID->162397909],
+
+Cell["call", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38006737403125*^9, 3.38006737565625*^9}},
+ CellID->64206737],
+
+Cell["put", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.38006737615625*^9, 3.38006738940625*^9}},
+ CellID->284670415],
+
+Cell["binomial tree", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.380067389984375*^9, 3.3800673926875*^9}},
+ CellID->337119308]
+}, Open  ]],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Fiona Maclachlan",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Fiona+\
+Maclachlan"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Fiona+Maclachlan"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.380067420203125*^9, 3.3800674315625*^9}},
+ CellID->236534877]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{940, 823},
+WindowMargins->{{84, Automatic}, {Automatic, 4}},
+FrontEndVersion->"6.0 for Microsoft Windows (32-bit) (June 19, 2007)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[46906, 1049, 310, 8, 70, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[47219, 1059, 677, 16, 70, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[47899, 1077, 339, 11, 70, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[48241, 1090, 636, 15, 70, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[48880, 1107, 843, 21, 70, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[49726, 1130, 303, 8, 70, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[50032, 1140, 1411, 31, 70, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[51446, 1173, 881, 21, 70, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 54274, 1269},
+ {"RotateAndZoomIn3D", 54383, 1272},
+ {"DragLocators", 54493, 1275},
+ {"CreateAndDeleteLocators", 54609, 1278},
+ {"SliderZoom", 54723, 1281},
+ {"GamepadControls", 54829, 1284},
+ {"AutomaticAnimation", 54942, 1287},
+ {"BookmarkAnimation", 55059, 1290}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 205, 4, 70, "DemoTitle",
+ CellID->700863240],
+Cell[798, 29, 33, 0, 70, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[856, 33, 29, 0, 70, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[910, 37, 8848, 232, 70, "Input",
+ CellID->1496021318],
+Cell[9761, 271, 6346, 126, 70, "Output",
+ CellID->580603476]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16153, 403, 36, 0, 70, "ManipulateCaptionSection"],
+Cell[16192, 405, 1321, 20, 70, "ManipulateCaption",
+ CellID->1044312921]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17550, 430, 28, 0, 70, "ThumbnailSection"],
+Cell[17581, 432, 6344, 126, 70, "Output",
+ CellID->9173383]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23962, 563, 28, 0, 70, "SnapshotsSection"],
+Cell[23993, 565, 6346, 126, 70, "Output",
+ CellID->229014970],
+Cell[30342, 693, 6350, 126, 70, "Output",
+ CellID->509445033],
+Cell[36695, 821, 6354, 126, 70, "Output",
+ CellID->274149335]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43086, 952, 26, 0, 70, "DetailsSection"],
+Cell[43115, 954, 3714, 88, 70, "DetailNotes",
+ CellID->453698864]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46866, 1047, 37, 0, 70, "ControlSuggestionsSection"],
+Cell[46906, 1049, 310, 8, 70, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[47219, 1059, 677, 16, 70, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[47899, 1077, 339, 11, 70, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[48241, 1090, 636, 15, 70, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[48880, 1107, 843, 21, 70, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[49726, 1130, 303, 8, 70, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[50032, 1140, 1411, 31, 70, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[51446, 1173, 881, 21, 70, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52364, 1199, 30, 0, 70, "SearchTermsSection"],
+Cell[52397, 1201, 135, 3, 70, "SearchTerms",
+ CellID->115212848],
+Cell[52535, 1206, 136, 3, 70, "SearchTerms",
+ CellID->837612703],
+Cell[52674, 1211, 141, 3, 70, "SearchTerms",
+ CellID->97351179],
+Cell[52818, 1216, 124, 2, 70, "SearchTerms",
+ CellID->162397909],
+Cell[52945, 1220, 134, 3, 70, "SearchTerms",
+ CellID->64206737],
+Cell[53082, 1225, 134, 3, 70, "SearchTerms",
+ CellID->284670415],
+Cell[53219, 1230, 144, 3, 70, "SearchTerms",
+ CellID->337119308]
+}, Open  ]],
+Cell[53378, 1236, 31, 0, 70, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[53434, 1240, 25, 0, 70, "AuthorSection"],
+Cell[53462, 1242, 413, 12, 70, "Author",
+ CellID->236534877]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
