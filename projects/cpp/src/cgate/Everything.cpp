@@ -1,5 +1,4 @@
 #include "headers.h"
-#include <cgate.h>
 #include "FutInfoRepl.hpp"
 #include "FullOrderLog.hpp"
 

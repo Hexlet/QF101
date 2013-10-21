@@ -7,8 +7,10 @@
 #include <cassert>
 using namespace std;
 
-#include <ql/types.hpp>
+#include <ql/quantlib.hpp>
 using namespace QuantLib;
+
+#include <cgate.h>
 
 #ifdef _WIN32
 #define WIN32_LEAN_AND_MEAN
