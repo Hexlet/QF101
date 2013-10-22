@@ -1,285 +1,317 @@
-2013-10-04 19:10:55.740;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
-2013-10-04 19:10:55.743;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
-2013-10-04 19:10:55.744;p2mq-cli;;MQ library started.
-2013-10-04 19:10:55.744;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
-2013-10-04 19:10:55.745;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
-2013-10-04 19:10:55.745;p2repl-cli;;Client replication library started
-2013-10-04 19:10:55.746;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New connection created;mq-conn 0x%X'
-2013-10-04 19:10:55.747;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream created;stream 0x%p'
-2013-10-04 19:10:55.747;p2repl-cli;;Stream created;stream 0x2E54365DE0
-2013-10-04 19:10:55.747;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'New protocol is enabled;stream 0x%p'
-2013-10-04 19:10:55.748;p2repl-cli;;New protocol is enabled;stream 0x2E54365DE0
-2013-10-04 19:10:55.749;p2repl-cli;;Stream created;stream 0x2E54366DC0
-2013-10-04 19:10:55.754;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection connID %d created; conn str %s'
-2013-10-04 19:10:55.765;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket created;conn 0x%p;sock 0x%p'
-2013-10-04 19:10:55.768;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket connected;conn 0x%p;host '%s';port %u'
-2013-10-04 19:10:55.770;p2mq-cli;;Socket connected;conn 0x2E527D8188;host '127.0.0.1';port 4001
-2013-10-04 19:10:55.771;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Recv completed;;conn 0x%p;count %d; data %#.*Z'
-2013-10-04 19:10:55.773;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();InHdr %d;recvLen %d;recvRem %d'
-2013-10-04 19:10:55.774;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();system_type 0x%X'
-2013-10-04 19:10:55.775;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg received;mq-conn 0x%p;type 0x%X;ver 0x%X;len %u;flags 0x%X;sign 0x%X%X%X%X;body %#.*Z'
-2013-10-04 19:10:55.776;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'RecvLLMsg() finished;res %X;inHdr %d;recvRem %d'
-2013-10-04 19:10:55.777;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Router status received;mq-conn 0x%p;state 0x%X;node_name '%s';login_id %u'
-2013-10-04 19:10:55.779;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection 0x%p connected; connID %x'
-2013-10-04 19:10:55.780;p2mq-cli;;Connection 0x2E527D7FA0 connected; connID 1
-2013-10-04 19:10:55.800;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%p;type 0x%X;len %u;oper_num %d'
-2013-10-04 19:10:56.299;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Operation result received;mq-conn 0x%p;type 0x%X;len %u;oper_num %d;res 0x%X('%s')'
-2013-10-04 19:10:56.304;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Posting message: to '%s'; cat: '%s'; type %d; size %d; bodySize: %d'
-2013-10-04 19:10:56.305;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%X;type 0x%X;len %u;oper_num %d'
-2013-10-04 19:10:56.312;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
-2013-10-04 19:10:56.313;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
-2013-10-04 19:10:56.314;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x2E543620D0
-2013-10-04 19:10:56.770;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New message added to recvList. Size: %d'
-2013-10-04 19:10:56.829;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opening started;stream 0x%p,type %d,name '%s',server_addr '%s''
-2013-10-04 19:10:56.830;p2repl-cli;;Stream opening started;stream 0x2E54365DE0,type 1,name 'FORTS_FUTINFO_REPL',server_addr 'FINTER_FORTS3_OLD.inter_info'
-2013-10-04 19:10:56.838;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x2E54368150
-2013-10-04 19:10:57.346;p2repl-cli;;Stream opening started;stream 0x2E54366DC0,type 1,name 'FORTS_ORDLOG_REPL',server_addr 'FINTER_FORTS3_OLD.inter_ordLog'
-2013-10-04 19:10:57.348;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opened;stream 0x%p;channel 0x%I64X'
-2013-10-04 19:10:57.349;p2repl-cli;;Stream opened;stream 0x2E54365DE0;channel 0x6B956E1E32B15
-2013-10-04 19:10:57.351;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Using server schema;stream 0x%p'
-2013-10-04 19:10:57.352;p2repl-cli;;Using server schema;stream 0x2E54365DE0
-2013-10-04 19:10:57.352;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is not equal to prev schema (lifenum ignored);stream 0x%p'
-2013-10-04 19:10:57.353;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x2E54365DE0
-2013-10-04 19:10:57.361;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current life numbers;stream 0x%p;Name '%s';Client lifenumber %d;Server lifenumber %d'
-2013-10-04 19:10:57.361;p2repl-cli;;Current life numbers;stream 0x2E54365DE0;Name 'FORTS_FUTINFO_REPL';Client lifenumber 8073;Server lifenumber 8073
-2013-10-04 19:10:57.363;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme setting started;stream 0x%p'
-2013-10-04 19:10:57.364;p2repl-cli;;Scheme setting started;stream 0x2E54365DE0
-2013-10-04 19:10:57.399;p2repl-cli;;Stream opened;stream 0x2E54366DC0;channel 0x5D4D6145025
-2013-10-04 19:10:57.400;p2repl-cli;;Using server schema;stream 0x2E54366DC0
-2013-10-04 19:10:57.401;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x2E54366DC0
-2013-10-04 19:10:57.407;p2repl-cli;;Current life numbers;stream 0x2E54366DC0;Name 'FORTS_ORDLOG_REPL';Client lifenumber 330;Server lifenumber 330
-2013-10-04 19:10:57.408;p2repl-cli;;Scheme setting started;stream 0x2E54366DC0
-2013-10-04 19:10:57.547;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current schema differs from previous schema;stream 0x%p'
-2013-10-04 19:10:57.548;p2repl-cli;;Current schema differs from previous schema;stream 0x2E54365DE0
-2013-10-04 19:10:57.551;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme is set;stream 0x%p;channel 0x%I64X'
-2013-10-04 19:10:57.552;p2repl-cli;;Scheme is set;stream 0x2E54365DE0;channel 0x6B956E1E32B15
-2013-10-04 19:10:57.553;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module for table '%s' was successfully registered'
-2013-10-04 19:10:57.554;p2repl-cli;;Statistics module for table 'delivery_report' was successfully registered
-2013-10-04 19:10:57.555;p2repl-cli;;Statistics module for table 'fut_rejected_orders' was successfully registered
-2013-10-04 19:10:57.556;p2repl-cli;;Statistics module for table 'fut_intercl_info' was successfully registered
-2013-10-04 19:10:57.557;p2repl-cli;;Statistics module for table 'fut_bond_registry' was successfully registered
-2013-10-04 19:10:57.558;p2repl-cli;;Statistics module for table 'fut_bond_isin' was successfully registered
-2013-10-04 19:10:57.558;p2repl-cli;;Statistics module for table 'fut_bond_nkd' was successfully registered
-2013-10-04 19:10:57.559;p2repl-cli;;Statistics module for table 'fut_bond_nominal' was successfully registered
-2013-10-04 19:10:57.560;p2repl-cli;;Statistics module for table 'fut_ts_cons' was successfully registered
-2013-10-04 19:10:57.560;p2repl-cli;;Statistics module for table 'usd_online' was successfully registered
-2013-10-04 19:10:57.561;p2repl-cli;;Statistics module for table 'fut_vcb' was successfully registered
-2013-10-04 19:10:57.562;p2repl-cli;;Statistics module for table 'session' was successfully registered
-2013-10-04 19:10:57.562;p2repl-cli;;Statistics module for table 'multileg_dict' was successfully registered
-2013-10-04 19:10:57.563;p2repl-cli;;Statistics module for table 'trade_modes' was successfully registered
-2013-10-04 19:10:57.565;p2repl-cli;;Statistics module for table 'fut_sess_contents' was successfully registered
-2013-10-04 19:10:57.565;p2repl-cli;;Statistics module for table 'fut_instruments' was successfully registered
-2013-10-04 19:10:57.566;p2repl-cli;;Statistics module for table 'diler' was successfully registered
-2013-10-04 19:10:57.567;p2repl-cli;;Statistics module for table 'investr' was successfully registered
-2013-10-04 19:10:57.568;p2repl-cli;;Statistics module for table 'fut_sess_settl' was successfully registered
-2013-10-04 19:10:57.568;p2repl-cli;;Statistics module for table 'sys_messages' was successfully registered
-2013-10-04 19:10:57.570;p2repl-cli;;Statistics module for table 'trf_accounts' was successfully registered
-2013-10-04 19:10:57.570;p2repl-cli;;Statistics module for table 'money_transfers' was successfully registered
-2013-10-04 19:10:57.571;p2repl-cli;;Statistics module for table 'trf_accounts_map' was successfully registered
-2013-10-04 19:10:57.572;p2repl-cli;;Statistics module for table 'RF' was successfully registered
-2013-10-04 19:10:57.572;p2repl-cli;;Statistics module for table 'prohibition' was successfully registered
-2013-10-04 19:10:57.573;p2repl-cli;;Statistics module for table 'rates' was successfully registered
-2013-10-04 19:10:57.574;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
-2013-10-04 19:10:57.574;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics was registered;stream name %s'
-2013-10-04 19:10:57.576;p2repl-cli;;Statistics was registered;stream name FORTS_FUTINFO_REPL
-2013-10-04 19:10:57.582;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%s; stream 0x%p; cnt %P'
-2013-10-04 19:10:57.583;P2ReplStorage;;Revs were inited; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.583;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%ctbl_idx %P; cur_rev %I64d'
-2013-10-04 19:10:57.584;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:57.585;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:57.585;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:57.586;P2ReplStorage;;	tbl_idx 3; cur_rev 0
-2013-10-04 19:10:57.586;P2ReplStorage;;	tbl_idx 4; cur_rev 0
-2013-10-04 19:10:57.587;P2ReplStorage;;	tbl_idx 5; cur_rev 0
-2013-10-04 19:10:57.588;P2ReplStorage;;	tbl_idx 6; cur_rev 0
-2013-10-04 19:10:57.588;P2ReplStorage;;	tbl_idx 7; cur_rev 0
-2013-10-04 19:10:57.589;P2ReplStorage;;	tbl_idx 8; cur_rev 0
-2013-10-04 19:10:57.589;P2ReplStorage;;	tbl_idx 9; cur_rev 0
-2013-10-04 19:10:57.590;P2ReplStorage;;	tbl_idx 10; cur_rev 0
-2013-10-04 19:10:57.590;P2ReplStorage;;	tbl_idx 11; cur_rev 0
-2013-10-04 19:10:57.591;P2ReplStorage;;	tbl_idx 12; cur_rev 0
-2013-10-04 19:10:57.592;P2ReplStorage;;	tbl_idx 13; cur_rev 0
-2013-10-04 19:10:57.592;P2ReplStorage;;	tbl_idx 14; cur_rev 0
-2013-10-04 19:10:57.594;P2ReplStorage;;	tbl_idx 15; cur_rev 0
-2013-10-04 19:10:57.594;P2ReplStorage;;	tbl_idx 16; cur_rev 0
-2013-10-04 19:10:57.595;P2ReplStorage;;	tbl_idx 17; cur_rev 0
-2013-10-04 19:10:57.595;P2ReplStorage;;	tbl_idx 18; cur_rev 0
-2013-10-04 19:10:57.596;P2ReplStorage;;	tbl_idx 19; cur_rev 0
-2013-10-04 19:10:57.596;P2ReplStorage;;	tbl_idx 20; cur_rev 0
-2013-10-04 19:10:57.597;P2ReplStorage;;	tbl_idx 21; cur_rev 0
-2013-10-04 19:10:57.598;P2ReplStorage;;	tbl_idx 22; cur_rev 0
-2013-10-04 19:10:57.599;P2ReplStorage;;	tbl_idx 23; cur_rev 0
-2013-10-04 19:10:57.600;P2ReplStorage;;	tbl_idx 24; cur_rev 0
-2013-10-04 19:10:57.600;P2ReplStorage;;	tbl_idx 25; cur_rev 0
-2013-10-04 19:10:57.601;P2ReplStorage;;Send revs; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.602;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:57.602;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:57.603;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:57.604;P2ReplStorage;;	tbl_idx 3; cur_rev 0
-2013-10-04 19:10:57.605;P2ReplStorage;;	tbl_idx 4; cur_rev 0
-2013-10-04 19:10:57.606;P2ReplStorage;;	tbl_idx 5; cur_rev 0
-2013-10-04 19:10:57.607;P2ReplStorage;;	tbl_idx 6; cur_rev 0
-2013-10-04 19:10:57.608;P2ReplStorage;;	tbl_idx 7; cur_rev 0
-2013-10-04 19:10:57.608;P2ReplStorage;;	tbl_idx 8; cur_rev 0
-2013-10-04 19:10:57.610;P2ReplStorage;;	tbl_idx 9; cur_rev 0
-2013-10-04 19:10:57.611;P2ReplStorage;;	tbl_idx 10; cur_rev 0
-2013-10-04 19:10:57.611;P2ReplStorage;;	tbl_idx 11; cur_rev 0
-2013-10-04 19:10:57.612;P2ReplStorage;;	tbl_idx 12; cur_rev 0
-2013-10-04 19:10:57.613;P2ReplStorage;;	tbl_idx 13; cur_rev 0
-2013-10-04 19:10:57.614;P2ReplStorage;;	tbl_idx 14; cur_rev 0
-2013-10-04 19:10:57.615;P2ReplStorage;;	tbl_idx 15; cur_rev 0
-2013-10-04 19:10:57.616;P2ReplStorage;;	tbl_idx 16; cur_rev 0
-2013-10-04 19:10:57.616;P2ReplStorage;;	tbl_idx 17; cur_rev 0
-2013-10-04 19:10:57.617;P2ReplStorage;;	tbl_idx 18; cur_rev 0
-2013-10-04 19:10:57.617;P2ReplStorage;;	tbl_idx 19; cur_rev 0
-2013-10-04 19:10:57.618;P2ReplStorage;;	tbl_idx 20; cur_rev 0
-2013-10-04 19:10:57.618;P2ReplStorage;;	tbl_idx 21; cur_rev 0
-2013-10-04 19:10:57.619;P2ReplStorage;;	tbl_idx 22; cur_rev 0
-2013-10-04 19:10:57.619;P2ReplStorage;;	tbl_idx 23; cur_rev 0
-2013-10-04 19:10:57.620;P2ReplStorage;;	tbl_idx 24; cur_rev 0
-2013-10-04 19:10:57.621;P2ReplStorage;;	tbl_idx 25; cur_rev 0
-2013-10-04 19:10:57.621;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Data requested;stream 0x%p;channel 0x%I64X;session %d'
-2013-10-04 19:10:57.622;p2repl-cli;;Data requested;stream 0x2E54365DE0;channel 0x6B956E1E32B15;session 0
-2013-10-04 19:10:57.623;p2repl-cli;;Current schema differs from previous schema;stream 0x2E54366DC0
-2013-10-04 19:10:57.623;p2repl-cli;;Scheme is set;stream 0x2E54366DC0;channel 0x5D4D6145025
-2013-10-04 19:10:57.625;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
-2013-10-04 19:10:57.626;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
-2013-10-04 19:10:57.627;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
-2013-10-04 19:10:57.628;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL
-2013-10-04 19:10:57.629;P2ReplStorage;;Revs were inited; stream 0x2E54366DC0; cnt 3
-2013-10-04 19:10:57.630;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:57.630;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:57.631;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:57.631;P2ReplStorage;;Send revs; stream 0x2E54366DC0; cnt 3
-2013-10-04 19:10:57.631;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:57.631;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:57.631;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:57.632;p2repl-cli;;Data requested;stream 0x2E54366DC0;channel 0x5D4D6145025;session 0
-2013-10-04 19:10:57.663;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLEAR_DELETED message received;stream 0x%p'
-2013-10-04 19:10:57.663;p2repl-cli;;CLEAR_DELETED message received;stream 0x2E54365DE0
-2013-10-04 19:10:57.664;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.664;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:57.664;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.665;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:57.665;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.665;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:57.665;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.666;P2ReplStorage;;	tbl_idx 3; cur_rev 0
-2013-10-04 19:10:57.666;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.666;P2ReplStorage;;	tbl_idx 4; cur_rev 0
-2013-10-04 19:10:57.666;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.667;P2ReplStorage;;	tbl_idx 5; cur_rev 0
-2013-10-04 19:10:57.667;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.667;P2ReplStorage;;	tbl_idx 6; cur_rev 0
-2013-10-04 19:10:57.667;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.668;P2ReplStorage;;	tbl_idx 7; cur_rev 0
-2013-10-04 19:10:57.668;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.668;P2ReplStorage;;	tbl_idx 8; cur_rev 0
-2013-10-04 19:10:57.668;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.669;P2ReplStorage;;	tbl_idx 9; cur_rev 0
-2013-10-04 19:10:57.669;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.669;P2ReplStorage;;	tbl_idx 10; cur_rev 0
-2013-10-04 19:10:57.670;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.670;P2ReplStorage;;	tbl_idx 11; cur_rev 0
-2013-10-04 19:10:57.670;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.670;P2ReplStorage;;	tbl_idx 12; cur_rev 0
-2013-10-04 19:10:57.671;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.671;P2ReplStorage;;	tbl_idx 13; cur_rev 0
-2013-10-04 19:10:57.671;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.671;P2ReplStorage;;	tbl_idx 14; cur_rev 0
-2013-10-04 19:10:57.672;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.672;P2ReplStorage;;	tbl_idx 15; cur_rev 0
-2013-10-04 19:10:57.672;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.672;P2ReplStorage;;	tbl_idx 16; cur_rev 0
-2013-10-04 19:10:57.672;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.673;P2ReplStorage;;	tbl_idx 17; cur_rev 0
-2013-10-04 19:10:57.673;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.673;P2ReplStorage;;	tbl_idx 18; cur_rev 0
-2013-10-04 19:10:57.674;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.674;P2ReplStorage;;	tbl_idx 19; cur_rev 0
-2013-10-04 19:10:57.674;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.674;P2ReplStorage;;	tbl_idx 20; cur_rev 0
-2013-10-04 19:10:57.675;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.675;P2ReplStorage;;	tbl_idx 21; cur_rev 0
-2013-10-04 19:10:57.676;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.677;P2ReplStorage;;	tbl_idx 22; cur_rev 0
-2013-10-04 19:10:57.677;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.677;P2ReplStorage;;	tbl_idx 23; cur_rev 0
-2013-10-04 19:10:57.678;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.678;P2ReplStorage;;	tbl_idx 24; cur_rev 0
-2013-10-04 19:10:57.678;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:57.678;P2ReplStorage;;	tbl_idx 25; cur_rev 0
-2013-10-04 19:10:57.680;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLOSE message received;stream 0x%p'
-2013-10-04 19:10:57.680;p2repl-cli;;CLOSE message received;stream 0x2E54366DC0
-2013-10-04 19:10:57.680;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream is being closed by server;stream 0x%p,reason %s(0x%x)'
-2013-10-04 19:10:57.681;p2repl-cli;;Stream is being closed by server;stream 0x2E54366DC0,reason REPL:REDIRECT_TO_SNAPSHOT_SERVER(0xa00f)
-2013-10-04 19:10:57.683;p2repl-cli;;Stream created;stream 0x2E546B4DC0
-2013-10-04 19:10:57.684;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x2E546B55C0
-2013-10-04 19:10:57.717;p2repl-cli;;Stream opening started;stream 0x2E546B4DC0,type 1,name 'FORTS_ORDLOG_REPL_SNAPSHOT',server_addr 'FINTER_FORTS3_SNAP_OLD.inter_ordLog_snap'
-2013-10-04 19:10:57.718;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy deleted;stream 0x%p,policy 0x%p'
-2013-10-04 19:10:57.719;P2ReplStorage;;Basic policy deleted;stream 0x2E54366DC0,policy 0x2E54368150
-2013-10-04 19:10:57.719;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module was unregistered, module name %s'
-2013-10-04 19:10:57.720;p2repl-cli;;Statistics module was unregistered, module name Datastream@ReplClient
-2013-10-04 19:10:57.720;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-04 19:10:57.720;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-04 19:10:57.720;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-04 19:10:57.762;p2repl-cli;;Stream opened;stream 0x2E546B4DC0;channel 0x15FC27263CC
-2013-10-04 19:10:57.763;p2repl-cli;;Using server schema;stream 0x2E546B4DC0
-2013-10-04 19:10:57.763;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is equal to prev schema (lifenum ignored);stream 0x%p'
-2013-10-04 19:10:57.764;p2repl-cli;;Desired schema is equal to prev schema (lifenum ignored);stream 0x2E546B4DC0
-2013-10-04 19:10:57.775;p2repl-cli;;Current life numbers;stream 0x2E546B4DC0;Name 'FORTS_ORDLOG_REPL_SNAPSHOT';Client lifenumber 330;Server lifenumber 330
-2013-10-04 19:10:57.776;p2repl-cli;;Scheme setting started;stream 0x2E546B4DC0
-2013-10-04 19:10:58.207;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'DATA message received;stream 0x%p'
-2013-10-04 19:10:58.208;p2repl-cli;;DATA message received;stream 0x2E54365DE0
-2013-10-04 19:10:58.208;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'NULL Fields';fmt 'Parse NULL fields %d'
-2013-10-04 19:10:58.209;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Processed received record;stream 0x%p %s; table_idx %u;rec_rev %I64u'
-2013-10-04 19:10:58.211;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Changed revs at %s; stream 0x%p; cnt %P'
-2013-10-04 19:10:58.212;P2ReplStorage;;Changed revs at commit; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:58.212;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%ctbl_idx %P; rev range %I64d - %I64d'
-2013-10-04 19:10:58.212;P2ReplStorage;;	tbl_idx 0; rev range 0 - 312
-2013-10-04 19:10:58.213;P2ReplStorage;;	tbl_idx 2; rev range 0 - 17980
-2013-10-04 19:10:58.213;P2ReplStorage;;	tbl_idx 3; rev range 0 - 434
-2013-10-04 19:10:58.213;P2ReplStorage;;	tbl_idx 4; rev range 0 - 786
-2013-10-04 19:10:58.213;P2ReplStorage;;	tbl_idx 5; rev range 0 - 9112
-2013-10-04 19:10:58.213;P2ReplStorage;;	tbl_idx 6; rev range 0 - 620
-2013-10-04 19:10:58.214;P2ReplStorage;;	tbl_idx 7; rev range 0 - 43
-2013-10-04 19:10:58.214;P2ReplStorage;;	tbl_idx 8; rev range 0 - 129606
-2013-10-04 19:10:58.214;P2ReplStorage;;	tbl_idx 9; rev range 0 - 311376
-2013-10-04 19:10:58.215;P2ReplStorage;;	tbl_idx 10; rev range 0 - 49
-2013-10-04 19:10:58.215;P2ReplStorage;;	tbl_idx 11; rev range 0 - 4835
-2013-10-04 19:10:58.215;p2repl-cli;;DATA message received;stream 0x2E54365DE0
-2013-10-04 19:10:58.217;P2ReplStorage;;Changed revs at commit; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:58.217;P2ReplStorage;;	tbl_idx 11; rev range 4836 - 5574
-2013-10-04 19:10:58.217;P2ReplStorage;;	tbl_idx 12; rev range 0 - 79
-2013-10-04 19:10:58.218;P2ReplStorage;;	tbl_idx 13; rev range 0 - 6496
-2013-10-04 19:10:58.218;p2repl-cli;;DATA message received;stream 0x2E54365DE0
-2013-10-04 19:10:58.775;P2ReplStorage;;Changed revs at commit; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:58.775;P2ReplStorage;;	tbl_idx 13; rev range 6497 - 6828
-2013-10-04 19:10:58.775;P2ReplStorage;;	tbl_idx 14; rev range 0 - 2046
-2013-10-04 19:10:58.775;P2ReplStorage;;	tbl_idx 15; rev range 0 - 3966
-2013-10-04 19:10:58.776;p2repl-cli;;Scheme is set;stream 0x2E546B4DC0;channel 0x15FC27263CC
-2013-10-04 19:10:58.777;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
-2013-10-04 19:10:58.778;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
-2013-10-04 19:10:58.778;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
-2013-10-04 19:10:58.778;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL_SNAPSHOT
-2013-10-04 19:10:58.779;P2ReplStorage;;Revs were inited; stream 0x2E546B4DC0; cnt 3
-2013-10-04 19:10:58.779;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:58.779;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:58.779;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:58.780;P2ReplStorage;;Send revs; stream 0x2E546B4DC0; cnt 3
-2013-10-04 19:10:58.780;P2ReplStorage;;	tbl_idx 0; cur_rev 0
-2013-10-04 19:10:58.780;P2ReplStorage;;	tbl_idx 1; cur_rev 0
-2013-10-04 19:10:58.780;P2ReplStorage;;	tbl_idx 2; cur_rev 0
-2013-10-04 19:10:58.781;p2repl-cli;;Data requested;stream 0x2E546B4DC0;channel 0x15FC27263CC;session 0
-2013-10-04 19:10:58.781;p2repl-cli;;DATA message received;stream 0x2E54365DE0
-2013-10-04 19:10:58.782;P2ReplStorage;;Changed revs at commit; stream 0x2E54365DE0; cnt 26
-2013-10-04 19:10:58.783;P2ReplStorage;;	tbl_idx 15; rev range 3967 - 4824
-2013-10-04 19:10:58.783;P2ReplStorage;;	tbl_idx 16; rev range 0 - 210105
-2013-10-04 19:10:58.783;P2ReplStorage;;	tbl_idx 17; rev range 0 - 751
-2013-10-04 19:10:58.783;P2ReplStorage;;	tbl_idx 18; rev range 0 - 25
-2013-10-04 19:10:58.783;P2ReplStorage;;	tbl_idx 19; rev range 0 - 6131
-2013-10-04 19:10:58.784;P2ReplStorage;;	tbl_idx 22; rev range 0 - 1659
-2013-10-04 19:10:58.784;P2ReplStorage;;	tbl_idx 23; rev range 0 - 78952
-2013-10-04 19:10:58.784;P2ReplStorage;;	tbl_idx 24; rev range 0 - 64
-2013-10-04 19:10:58.784;P2ReplStorage;;	tbl_idx 25; rev range 0 - 53
-2013-10-04 19:10:58.784;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream is on-line;stream 0x%p'
+2013-10-22 16:24:30.562;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
+2013-10-22 16:24:30.565;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
+2013-10-22 16:24:30.565;p2mq-cli;;MQ library started.
+2013-10-22 16:24:30.567;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
+2013-10-22 16:24:30.567;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
+2013-10-22 16:24:30.569;p2repl-cli;;Client replication library started
+2013-10-22 16:24:30.570;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New connection created;mq-conn 0x%X'
+2013-10-22 16:24:30.571;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream created;stream 0x%p'
+2013-10-22 16:24:30.572;p2repl-cli;;Stream created;stream 0x6E58EC5830
+2013-10-22 16:24:30.573;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'New protocol is enabled;stream 0x%p'
+2013-10-22 16:24:30.573;p2repl-cli;;New protocol is enabled;stream 0x6E58EC5830
+2013-10-22 16:24:30.576;p2repl-cli;;Stream created;stream 0x6E58EC6B80
+2013-10-22 16:24:30.584;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection connID %d created; conn str %s'
+2013-10-22 16:24:30.607;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket created;conn 0x%p;sock 0x%p'
+2013-10-22 16:24:30.608;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket connected;conn 0x%p;host '%s';port %u'
+2013-10-22 16:24:30.609;p2mq-cli;;Socket connected;conn 0x6E58847CD8;host '127.0.0.1';port 4001
+2013-10-22 16:24:30.611;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Recv completed;;conn 0x%p;count %d; data %#.*Z'
+2013-10-22 16:24:30.611;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();InHdr %d;recvLen %d;recvRem %d'
+2013-10-22 16:24:30.614;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();system_type 0x%X'
+2013-10-22 16:24:30.614;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg received;mq-conn 0x%p;type 0x%X;ver 0x%X;len %u;flags 0x%X;sign 0x%X%X%X%X;body %#.*Z'
+2013-10-22 16:24:30.615;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'RecvLLMsg() finished;res %X;inHdr %d;recvRem %d'
+2013-10-22 16:24:30.617;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Router status received;mq-conn 0x%p;state 0x%X;node_name '%s';login_id %u'
+2013-10-22 16:24:30.618;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection 0x%p connected; connID %x'
+2013-10-22 16:24:30.620;p2mq-cli;;Connection 0x6E58847AF0 connected; connID 1
+2013-10-22 16:24:30.644;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%p;type 0x%X;len %u;oper_num %d'
+2013-10-22 16:24:30.684;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Operation result received;mq-conn 0x%p;type 0x%X;len %u;oper_num %d;res 0x%X('%s')'
+2013-10-22 16:24:30.690;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Posting message: to '%s'; cat: '%s'; type %d; size %d; bodySize: %d'
+2013-10-22 16:24:30.694;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%X;type 0x%X;len %u;oper_num %d'
+2013-10-22 16:24:30.707;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
+2013-10-22 16:24:30.709;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
+2013-10-22 16:24:30.709;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x6E58EC7ED0
+2013-10-22 16:24:30.736;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New message added to recvList. Size: %d'
+2013-10-22 16:24:30.747;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opening started;stream 0x%p,type %d,name '%s',server_addr '%s''
+2013-10-22 16:24:30.748;p2repl-cli;;Stream opening started;stream 0x6E58EC5830,type 1,name 'FORTS_FUTINFO_REPL',server_addr 'FINTER_FORTS3_OLD.inter_info'
+2013-10-22 16:24:30.757;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x6E58EC7330
+2013-10-22 16:24:30.804;p2repl-cli;;Stream opening started;stream 0x6E58EC6B80,type 1,name 'FORTS_ORDLOG_REPL',server_addr 'FINTER_FORTS3_OLD.inter_ordLog'
+2013-10-22 16:24:30.809;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opened;stream 0x%p;channel 0x%I64X'
+2013-10-22 16:24:30.810;p2repl-cli;;Stream opened;stream 0x6E58EC5830;channel 0x6FB51E1E32B15
+2013-10-22 16:24:30.814;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Using server schema;stream 0x%p'
+2013-10-22 16:24:30.815;p2repl-cli;;Using server schema;stream 0x6E58EC5830
+2013-10-22 16:24:30.821;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is not equal to prev schema (lifenum ignored);stream 0x%p'
+2013-10-22 16:24:30.824;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x6E58EC5830
+2013-10-22 16:24:30.833;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current life numbers;stream 0x%p;Name '%s';Client lifenumber %d;Server lifenumber %d'
+2013-10-22 16:24:30.834;p2repl-cli;;Current life numbers;stream 0x6E58EC5830;Name 'FORTS_FUTINFO_REPL';Client lifenumber 8075;Server lifenumber 8075
+2013-10-22 16:24:30.838;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme setting started;stream 0x%p'
+2013-10-22 16:24:30.838;p2repl-cli;;Scheme setting started;stream 0x6E58EC5830
+2013-10-22 16:24:30.845;p2repl-cli;;Stream opened;stream 0x6E58EC6B80;channel 0x76BD6145025
+2013-10-22 16:24:30.851;p2repl-cli;;Using server schema;stream 0x6E58EC6B80
+2013-10-22 16:24:30.852;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x6E58EC6B80
+2013-10-22 16:24:30.858;p2repl-cli;;Current life numbers;stream 0x6E58EC6B80;Name 'FORTS_ORDLOG_REPL';Client lifenumber 330;Server lifenumber 330
+2013-10-22 16:24:30.862;p2repl-cli;;Scheme setting started;stream 0x6E58EC6B80
+2013-10-22 16:24:31.844;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current schema differs from previous schema;stream 0x%p'
+2013-10-22 16:24:31.845;p2repl-cli;;Current schema differs from previous schema;stream 0x6E58EC5830
+2013-10-22 16:24:31.847;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme is set;stream 0x%p;channel 0x%I64X'
+2013-10-22 16:24:31.858;p2repl-cli;;Scheme is set;stream 0x6E58EC5830;channel 0x6FB51E1E32B15
+2013-10-22 16:24:31.867;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module for table '%s' was successfully registered'
+2013-10-22 16:24:31.869;p2repl-cli;;Statistics module for table 'delivery_report' was successfully registered
+2013-10-22 16:24:31.879;p2repl-cli;;Statistics module for table 'fut_rejected_orders' was successfully registered
+2013-10-22 16:24:31.883;p2repl-cli;;Statistics module for table 'fut_intercl_info' was successfully registered
+2013-10-22 16:24:31.885;p2repl-cli;;Statistics module for table 'fut_bond_registry' was successfully registered
+2013-10-22 16:24:31.885;p2repl-cli;;Statistics module for table 'fut_bond_isin' was successfully registered
+2013-10-22 16:24:31.886;p2repl-cli;;Statistics module for table 'fut_bond_nkd' was successfully registered
+2013-10-22 16:24:31.891;p2repl-cli;;Statistics module for table 'fut_bond_nominal' was successfully registered
+2013-10-22 16:24:31.899;p2repl-cli;;Statistics module for table 'fut_ts_cons' was successfully registered
+2013-10-22 16:24:31.909;p2repl-cli;;Statistics module for table 'usd_online' was successfully registered
+2013-10-22 16:24:31.917;p2repl-cli;;Statistics module for table 'fut_vcb' was successfully registered
+2013-10-22 16:24:31.926;p2repl-cli;;Statistics module for table 'session' was successfully registered
+2013-10-22 16:24:31.932;p2repl-cli;;Statistics module for table 'multileg_dict' was successfully registered
+2013-10-22 16:24:31.935;p2repl-cli;;Statistics module for table 'trade_modes' was successfully registered
+2013-10-22 16:24:31.936;p2repl-cli;;Statistics module for table 'fut_sess_contents' was successfully registered
+2013-10-22 16:24:31.942;p2repl-cli;;Statistics module for table 'fut_instruments' was successfully registered
+2013-10-22 16:24:31.945;p2repl-cli;;Statistics module for table 'diler' was successfully registered
+2013-10-22 16:24:31.952;p2repl-cli;;Statistics module for table 'investr' was successfully registered
+2013-10-22 16:24:31.959;p2repl-cli;;Statistics module for table 'fut_sess_settl' was successfully registered
+2013-10-22 16:24:31.960;p2repl-cli;;Statistics module for table 'sys_messages' was successfully registered
+2013-10-22 16:24:31.968;p2repl-cli;;Statistics module for table 'trf_accounts' was successfully registered
+2013-10-22 16:24:31.975;p2repl-cli;;Statistics module for table 'money_transfers' was successfully registered
+2013-10-22 16:24:31.985;p2repl-cli;;Statistics module for table 'trf_accounts_map' was successfully registered
+2013-10-22 16:24:31.987;p2repl-cli;;Statistics module for table 'RF' was successfully registered
+2013-10-22 16:24:31.993;p2repl-cli;;Statistics module for table 'prohibition' was successfully registered
+2013-10-22 16:24:31.996;p2repl-cli;;Statistics module for table 'rates' was successfully registered
+2013-10-22 16:24:32.003;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
+2013-10-22 16:24:32.008;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics was registered;stream name %s'
+2013-10-22 16:24:32.022;p2repl-cli;;Statistics was registered;stream name FORTS_FUTINFO_REPL
+2013-10-22 16:24:32.044;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%s; stream 0x%p; cnt %P'
+2013-10-22 16:24:32.045;P2ReplStorage;;Revs were inited; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.046;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%ctbl_idx %P; cur_rev %I64d'
+2013-10-22 16:24:32.050;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.051;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.051;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.051;P2ReplStorage;;	tbl_idx 3; cur_rev 0
+2013-10-22 16:24:32.052;P2ReplStorage;;	tbl_idx 4; cur_rev 0
+2013-10-22 16:24:32.052;P2ReplStorage;;	tbl_idx 5; cur_rev 0
+2013-10-22 16:24:32.058;P2ReplStorage;;	tbl_idx 6; cur_rev 0
+2013-10-22 16:24:32.061;P2ReplStorage;;	tbl_idx 7; cur_rev 0
+2013-10-22 16:24:32.066;P2ReplStorage;;	tbl_idx 8; cur_rev 0
+2013-10-22 16:24:32.072;P2ReplStorage;;	tbl_idx 9; cur_rev 0
+2013-10-22 16:24:32.074;P2ReplStorage;;	tbl_idx 10; cur_rev 0
+2013-10-22 16:24:32.080;P2ReplStorage;;	tbl_idx 11; cur_rev 0
+2013-10-22 16:24:32.081;P2ReplStorage;;	tbl_idx 12; cur_rev 0
+2013-10-22 16:24:32.085;P2ReplStorage;;	tbl_idx 13; cur_rev 0
+2013-10-22 16:24:32.088;P2ReplStorage;;	tbl_idx 14; cur_rev 0
+2013-10-22 16:24:32.094;P2ReplStorage;;	tbl_idx 15; cur_rev 0
+2013-10-22 16:24:32.094;P2ReplStorage;;	tbl_idx 16; cur_rev 0
+2013-10-22 16:24:32.096;P2ReplStorage;;	tbl_idx 17; cur_rev 0
+2013-10-22 16:24:32.096;P2ReplStorage;;	tbl_idx 18; cur_rev 0
+2013-10-22 16:24:32.096;P2ReplStorage;;	tbl_idx 19; cur_rev 0
+2013-10-22 16:24:32.097;P2ReplStorage;;	tbl_idx 20; cur_rev 0
+2013-10-22 16:24:32.098;P2ReplStorage;;	tbl_idx 21; cur_rev 0
+2013-10-22 16:24:32.102;P2ReplStorage;;	tbl_idx 22; cur_rev 0
+2013-10-22 16:24:32.103;P2ReplStorage;;	tbl_idx 23; cur_rev 0
+2013-10-22 16:24:32.107;P2ReplStorage;;	tbl_idx 24; cur_rev 0
+2013-10-22 16:24:32.111;P2ReplStorage;;	tbl_idx 25; cur_rev 0
+2013-10-22 16:24:32.112;P2ReplStorage;;Send revs; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.117;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.123;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.126;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.126;P2ReplStorage;;	tbl_idx 3; cur_rev 0
+2013-10-22 16:24:32.130;P2ReplStorage;;	tbl_idx 4; cur_rev 0
+2013-10-22 16:24:32.131;P2ReplStorage;;	tbl_idx 5; cur_rev 0
+2013-10-22 16:24:32.136;P2ReplStorage;;	tbl_idx 6; cur_rev 0
+2013-10-22 16:24:32.137;P2ReplStorage;;	tbl_idx 7; cur_rev 0
+2013-10-22 16:24:32.143;P2ReplStorage;;	tbl_idx 8; cur_rev 0
+2013-10-22 16:24:32.149;P2ReplStorage;;	tbl_idx 9; cur_rev 0
+2013-10-22 16:24:32.153;P2ReplStorage;;	tbl_idx 10; cur_rev 0
+2013-10-22 16:24:32.156;P2ReplStorage;;	tbl_idx 11; cur_rev 0
+2013-10-22 16:24:32.156;P2ReplStorage;;	tbl_idx 12; cur_rev 0
+2013-10-22 16:24:32.163;P2ReplStorage;;	tbl_idx 13; cur_rev 0
+2013-10-22 16:24:32.168;P2ReplStorage;;	tbl_idx 14; cur_rev 0
+2013-10-22 16:24:32.169;P2ReplStorage;;	tbl_idx 15; cur_rev 0
+2013-10-22 16:24:32.174;P2ReplStorage;;	tbl_idx 16; cur_rev 0
+2013-10-22 16:24:32.180;P2ReplStorage;;	tbl_idx 17; cur_rev 0
+2013-10-22 16:24:32.181;P2ReplStorage;;	tbl_idx 18; cur_rev 0
+2013-10-22 16:24:32.184;P2ReplStorage;;	tbl_idx 19; cur_rev 0
+2013-10-22 16:24:32.188;P2ReplStorage;;	tbl_idx 20; cur_rev 0
+2013-10-22 16:24:32.188;P2ReplStorage;;	tbl_idx 21; cur_rev 0
+2013-10-22 16:24:32.192;P2ReplStorage;;	tbl_idx 22; cur_rev 0
+2013-10-22 16:24:32.193;P2ReplStorage;;	tbl_idx 23; cur_rev 0
+2013-10-22 16:24:32.197;P2ReplStorage;;	tbl_idx 24; cur_rev 0
+2013-10-22 16:24:32.200;P2ReplStorage;;	tbl_idx 25; cur_rev 0
+2013-10-22 16:24:32.211;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Data requested;stream 0x%p;channel 0x%I64X;session %d'
+2013-10-22 16:24:32.212;p2repl-cli;;Data requested;stream 0x6E58EC5830;channel 0x6FB51E1E32B15;session 0
+2013-10-22 16:24:32.224;p2repl-cli;;Current schema differs from previous schema;stream 0x6E58EC6B80
+2013-10-22 16:24:32.226;p2repl-cli;;Scheme is set;stream 0x6E58EC6B80;channel 0x76BD6145025
+2013-10-22 16:24:32.236;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
+2013-10-22 16:24:32.238;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
+2013-10-22 16:24:32.239;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
+2013-10-22 16:24:32.240;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL
+2013-10-22 16:24:32.244;P2ReplStorage;;Revs were inited; stream 0x6E58EC6B80; cnt 3
+2013-10-22 16:24:32.244;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.244;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.244;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.244;P2ReplStorage;;Send revs; stream 0x6E58EC6B80; cnt 3
+2013-10-22 16:24:32.245;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.245;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.245;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.246;p2repl-cli;;Data requested;stream 0x6E58EC6B80;channel 0x76BD6145025;session 0
+2013-10-22 16:24:32.257;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLEAR_DELETED message received;stream 0x%p'
+2013-10-22 16:24:32.258;p2repl-cli;;CLEAR_DELETED message received;stream 0x6E58EC5830
+2013-10-22 16:24:32.259;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.260;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.260;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.261;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.261;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.262;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.262;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.263;P2ReplStorage;;	tbl_idx 3; cur_rev 0
+2013-10-22 16:24:32.263;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.263;P2ReplStorage;;	tbl_idx 4; cur_rev 0
+2013-10-22 16:24:32.263;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.264;P2ReplStorage;;	tbl_idx 5; cur_rev 0
+2013-10-22 16:24:32.264;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.265;P2ReplStorage;;	tbl_idx 6; cur_rev 0
+2013-10-22 16:24:32.265;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.266;P2ReplStorage;;	tbl_idx 7; cur_rev 0
+2013-10-22 16:24:32.269;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.270;P2ReplStorage;;	tbl_idx 8; cur_rev 0
+2013-10-22 16:24:32.271;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.272;P2ReplStorage;;	tbl_idx 9; cur_rev 0
+2013-10-22 16:24:32.274;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.275;P2ReplStorage;;	tbl_idx 10; cur_rev 0
+2013-10-22 16:24:32.275;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.276;P2ReplStorage;;	tbl_idx 11; cur_rev 0
+2013-10-22 16:24:32.276;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.277;P2ReplStorage;;	tbl_idx 12; cur_rev 0
+2013-10-22 16:24:32.277;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.278;P2ReplStorage;;	tbl_idx 13; cur_rev 0
+2013-10-22 16:24:32.278;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.279;P2ReplStorage;;	tbl_idx 14; cur_rev 0
+2013-10-22 16:24:32.281;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.282;P2ReplStorage;;	tbl_idx 15; cur_rev 0
+2013-10-22 16:24:32.282;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.284;P2ReplStorage;;	tbl_idx 16; cur_rev 0
+2013-10-22 16:24:32.284;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.284;P2ReplStorage;;	tbl_idx 17; cur_rev 0
+2013-10-22 16:24:32.287;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.287;P2ReplStorage;;	tbl_idx 18; cur_rev 0
+2013-10-22 16:24:32.288;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.288;P2ReplStorage;;	tbl_idx 19; cur_rev 0
+2013-10-22 16:24:32.289;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.289;P2ReplStorage;;	tbl_idx 20; cur_rev 0
+2013-10-22 16:24:32.291;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.291;P2ReplStorage;;	tbl_idx 21; cur_rev 0
+2013-10-22 16:24:32.291;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.293;P2ReplStorage;;	tbl_idx 22; cur_rev 0
+2013-10-22 16:24:32.294;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.294;P2ReplStorage;;	tbl_idx 23; cur_rev 0
+2013-10-22 16:24:32.296;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.296;P2ReplStorage;;	tbl_idx 24; cur_rev 0
+2013-10-22 16:24:32.297;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:32.298;P2ReplStorage;;	tbl_idx 25; cur_rev 0
+2013-10-22 16:24:32.300;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLOSE message received;stream 0x%p'
+2013-10-22 16:24:32.301;p2repl-cli;;CLOSE message received;stream 0x6E58EC6B80
+2013-10-22 16:24:32.302;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream is being closed by server;stream 0x%p,reason %s(0x%x)'
+2013-10-22 16:24:32.304;p2repl-cli;;Stream is being closed by server;stream 0x6E58EC6B80,reason REPL:REDIRECT_TO_SNAPSHOT_SERVER(0xa00f)
+2013-10-22 16:24:32.314;p2repl-cli;;Stream created;stream 0x6E58ED36C0
+2013-10-22 16:24:32.315;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x6E58ED3EC0
+2013-10-22 16:24:32.352;p2repl-cli;;Stream opening started;stream 0x6E58ED36C0,type 1,name 'FORTS_ORDLOG_REPL_SNAPSHOT',server_addr 'FINTER_FORTS3_SNAP_OLD.inter_ordLog_snap'
+2013-10-22 16:24:32.353;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy deleted;stream 0x%p,policy 0x%p'
+2013-10-22 16:24:32.354;P2ReplStorage;;Basic policy deleted;stream 0x6E58EC6B80,policy 0x6E58EC7330
+2013-10-22 16:24:32.354;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module was unregistered, module name %s'
+2013-10-22 16:24:32.355;p2repl-cli;;Statistics module was unregistered, module name Datastream@ReplClient
+2013-10-22 16:24:32.356;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-10-22 16:24:32.356;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-10-22 16:24:32.356;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-10-22 16:24:32.402;p2repl-cli;;Stream opened;stream 0x6E58ED36C0;channel 0x228C27263CC
+2013-10-22 16:24:32.406;p2repl-cli;;Using server schema;stream 0x6E58ED36C0
+2013-10-22 16:24:32.407;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is equal to prev schema (lifenum ignored);stream 0x%p'
+2013-10-22 16:24:32.409;p2repl-cli;;Desired schema is equal to prev schema (lifenum ignored);stream 0x6E58ED36C0
+2013-10-22 16:24:32.422;p2repl-cli;;Current life numbers;stream 0x6E58ED36C0;Name 'FORTS_ORDLOG_REPL_SNAPSHOT';Client lifenumber 330;Server lifenumber 330
+2013-10-22 16:24:32.424;p2repl-cli;;Scheme setting started;stream 0x6E58ED36C0
+2013-10-22 16:24:32.545;p2repl-cli;;Scheme is set;stream 0x6E58ED36C0;channel 0x228C27263CC
+2013-10-22 16:24:32.546;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
+2013-10-22 16:24:32.547;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
+2013-10-22 16:24:32.547;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
+2013-10-22 16:24:32.548;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL_SNAPSHOT
+2013-10-22 16:24:32.548;P2ReplStorage;;Revs were inited; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:32.549;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.549;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.549;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.549;P2ReplStorage;;Send revs; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:32.551;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.551;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.551;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.552;p2repl-cli;;Data requested;stream 0x6E58ED36C0;channel 0x228C27263CC;session 0
+2013-10-22 16:24:32.599;p2repl-cli;;CLEAR_DELETED message received;stream 0x6E58ED36C0
+2013-10-22 16:24:32.599;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:32.600;P2ReplStorage;;	tbl_idx 0; cur_rev 0
+2013-10-22 16:24:32.601;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:32.602;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:32.602;P2ReplStorage;;Revs adjustment due to CLEAR_DELETED; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:32.602;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:32.662;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'DATA message received;stream 0x%p'
+2013-10-22 16:24:32.663;p2repl-cli;;DATA message received;stream 0x6E58ED36C0
+2013-10-22 16:24:32.665;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'NULL Fields';fmt 'Parse NULL fields %d'
+2013-10-22 16:24:32.665;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Processed received record;stream 0x%p %s; table_idx %u;rec_rev %I64u'
+2013-10-22 16:24:36.296;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Changed revs at %s; stream 0x%p; cnt %P'
+2013-10-22 16:24:36.297;P2ReplStorage;;Changed revs at commit; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:36.297;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt '%ctbl_idx %P; rev range %I64d - %I64d'
+2013-10-22 16:24:36.298;P2ReplStorage;;	tbl_idx 0; rev range 0 - 2319033158
+2013-10-22 16:24:36.299;p2repl-cli;;DATA message received;stream 0x6E58ED36C0
+2013-10-22 16:24:39.416;P2ReplStorage;;Changed revs at commit; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:39.416;P2ReplStorage;;	tbl_idx 0; rev range 2319033159 - 2319037009
+2013-10-22 16:24:39.417;p2repl-cli;;DATA message received;stream 0x6E58ED36C0
+2013-10-22 16:24:43.191;P2ReplStorage;;Changed revs at commit; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:43.192;P2ReplStorage;;	tbl_idx 0; rev range 2319037010 - 2319040641
+2013-10-22 16:24:43.192;p2repl-cli;;DATA message received;stream 0x6E58ED36C0
+2013-10-22 16:24:46.335;P2ReplStorage;;Changed revs at commit; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:46.335;P2ReplStorage;;	tbl_idx 0; rev range 2319040642 - 2319044542
+2013-10-22 16:24:46.335;P2ReplStorage;;Send revs; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:24:46.336;P2ReplStorage;;	tbl_idx 0; cur_rev 2319044543
+2013-10-22 16:24:46.336;P2ReplStorage;;	tbl_idx 1; cur_rev 0
+2013-10-22 16:24:46.336;P2ReplStorage;;	tbl_idx 2; cur_rev 0
+2013-10-22 16:24:46.337;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'ACK message posted;stream 0x%p'
+2013-10-22 16:24:46.338;p2repl-cli;;ACK message posted;stream 0x6E58ED36C0
+2013-10-22 16:24:46.338;p2repl-cli;;DATA message received;stream 0x6E58EC5830
+2013-10-22 16:24:46.340;P2ReplStorage;;Changed revs at commit; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:46.341;P2ReplStorage;;	tbl_idx 0; rev range 0 - 228
+2013-10-22 16:24:46.341;P2ReplStorage;;	tbl_idx 1; rev range 0 - 10
+2013-10-22 16:24:46.342;P2ReplStorage;;	tbl_idx 2; rev range 0 - 26325
+2013-10-22 16:24:46.342;P2ReplStorage;;	tbl_idx 3; rev range 0 - 782
+2013-10-22 16:24:46.342;P2ReplStorage;;	tbl_idx 4; rev range 0 - 1088
+2013-10-22 16:24:46.343;P2ReplStorage;;	tbl_idx 5; rev range 0 - 12428
+2013-10-22 16:24:46.343;P2ReplStorage;;	tbl_idx 6; rev range 0 - 848
+2013-10-22 16:24:46.343;P2ReplStorage;;	tbl_idx 7; rev range 0 - 51
+2013-10-22 16:24:46.344;P2ReplStorage;;	tbl_idx 8; rev range 0 - 194410
+2013-10-22 16:24:46.344;P2ReplStorage;;	tbl_idx 9; rev range 0 - 563948
+2013-10-22 16:24:46.344;P2ReplStorage;;	tbl_idx 10; rev range 0 - 57
+2013-10-22 16:24:46.345;P2ReplStorage;;	tbl_idx 11; rev range 0 - 8670
+2013-10-22 16:24:46.345;p2repl-cli;;DATA message received;stream 0x6E58EC5830
+2013-10-22 16:24:46.347;P2ReplStorage;;Changed revs at commit; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:46.347;P2ReplStorage;;	tbl_idx 11; rev range 8671 - 9410
+2013-10-22 16:24:46.348;P2ReplStorage;;	tbl_idx 12; rev range 0 - 143
+2013-10-22 16:24:46.348;P2ReplStorage;;	tbl_idx 13; rev range 0 - 7324
+2013-10-22 16:24:46.348;p2repl-cli;;DATA message received;stream 0x6E58EC5830
+2013-10-22 16:24:46.353;P2ReplStorage;;Changed revs at commit; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:46.353;P2ReplStorage;;	tbl_idx 13; rev range 7325 - 7655
+2013-10-22 16:24:46.354;P2ReplStorage;;	tbl_idx 14; rev range 0 - 2736
+2013-10-22 16:24:46.354;P2ReplStorage;;	tbl_idx 15; rev range 0 - 7851
+2013-10-22 16:24:46.354;p2repl-cli;;DATA message received;stream 0x6E58EC5830
+2013-10-22 16:24:46.355;P2ReplStorage;;Changed revs at commit; stream 0x6E58EC5830; cnt 26
+2013-10-22 16:24:46.356;P2ReplStorage;;	tbl_idx 15; rev range 7852 - 8684
+2013-10-22 16:24:46.356;P2ReplStorage;;	tbl_idx 16; rev range 0 - 378490
+2013-10-22 16:24:46.356;P2ReplStorage;;	tbl_idx 17; rev range 0 - 780
+2013-10-22 16:24:46.357;P2ReplStorage;;	tbl_idx 18; rev range 0 - 25
+2013-10-22 16:24:46.357;P2ReplStorage;;	tbl_idx 19; rev range 0 - 8363
+2013-10-22 16:24:46.357;P2ReplStorage;;	tbl_idx 20; rev range 0 - 38
+2013-10-22 16:24:46.357;P2ReplStorage;;	tbl_idx 22; rev range 0 - 2987
+2013-10-22 16:24:46.358;P2ReplStorage;;	tbl_idx 23; rev range 0 - 144863
+2013-10-22 16:24:46.358;P2ReplStorage;;	tbl_idx 24; rev range 0 - 96
+2013-10-22 16:24:46.358;P2ReplStorage;;	tbl_idx 25; rev range 0 - 61
+2013-10-22 16:24:46.359;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream is on-line;stream 0x%p'
+2013-10-22 16:24:46.360;p2repl-cli;;Stream is on-line;stream 0x6E58EC5830
+2013-10-22 16:24:46.444;p2repl-cli;;DATA message received;stream 0x6E58ED36C0
+2013-10-22 16:25:32.696;P2ReplStorage;;Changed revs at commit; stream 0x6E58ED36C0; cnt 3
+2013-10-22 16:25:32.696;P2ReplStorage;;	tbl_idx 0; rev range 2319044543 - 2319048363
+2013-10-22 16:25:32.698;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'PING message posted;stream 0x%p'

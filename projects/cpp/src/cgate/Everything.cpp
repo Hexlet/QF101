@@ -2,6 +2,13 @@
 #include "FutInfoRepl.hpp"
 #include "FullOrderLog.hpp"
 
+enum OrderAction
+{
+  Delete,
+  Add,
+  Reduce
+};
+
 double powersOf10[] = { 1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 10000000.0 };
 
 double stringToDouble(string& s)
@@ -12,6 +19,14 @@ double stringToDouble(string& s)
   auto dotPos = s.find('.');
   s.erase(s.begin() + dotPos);
   return _atoi64(s.c_str())/powersOf10[s.length() - dotPos] ;
+}
+
+double bcdToDouble(char* bcd)
+{
+  int64_t intpart;
+  int8_t scale;
+  cg_bcd_get(reinterpret_cast<void*>(bcd), &intpart, &scale);
+  return (double)intpart / powersOf10[(size_t)scale];
 }
 
 class OrderBook
@@ -60,9 +75,24 @@ public:
     else
       return bid + ask;
   }
+  void ProcessOrder(bool bid, bool increase, Real price, int volume)
+  {
+    map<Real,int>& bucket = bid ? bids : asks;
+    if (increase)
+      bucket[price] += volume;
+    else {
+      bucket[price] -= volume;
+      assert(bucket[price] >= 0);
+      if (bucket[price] == 0)
+        bucket.erase(price);
+    }
+  }
 };
 
 bool quit = false;
+
+map<int, FutureInfo::fut_instruments> futureInfo;
+map<int, OrderBook> orderBooks;
 
 CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
@@ -72,16 +102,33 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
     if (strcmp(streamData->msg_name, "orders_log") == 0)
     {
-      FullOrderLog::orders_log* ol = reinterpret_cast<FullOrderLog::orders_log*>(msg);
-      uint64_t *z = (uint64_t*)msg;
-      double d = stringToDouble(string(ol->price));
-      cout << d << endl;
+      FullOrderLog::orders_log* ol = reinterpret_cast<FullOrderLog::orders_log*>(msg->data);
+      OrderBook& o = orderBooks[ol->isin_id];
+      bool bid = ol->dir == 1;
+      if (!(ol->status & 0x04))
+      {
+        switch (ol->action)
+        {
+        case OrderAction::Add:
+          o.ProcessOrder(bid, true, bcdToDouble(ol->price), ol->amount);
+          break;
+        case OrderAction::Delete:
+          o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
+          break;
+        case OrderAction::Reduce:
+          o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
+          break;
+        }
+        cout << futureInfo[ol->isin_id].name << " bid " <<
+          o.GetBestBid() << " ask " << o.GetBestAsk() << endl;
+      }
     }
     break;
   }
 
   return CG_ERR_OK;
 }
+
 
 CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
@@ -92,7 +139,7 @@ CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* ms
     if (strcmp(streamData->msg_name, "fut_instruments") == 0)
     {
       FutureInfo::fut_instruments* inst = reinterpret_cast<FutureInfo::fut_instruments*>(streamData->data);
-      cout << inst->name << endl;
+      futureInfo[inst->isin_id] = *inst;
     }
     break;
   }
