@@ -100,7 +100,7 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
   {
   case CG_MSG_STREAM_DATA:
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
-    if (strcmp(streamData->msg_name, "orders_log") == 0)
+    if (streamData->msg_index == FullOrderLog::orders_log_index)
     {
       FullOrderLog::orders_log* ol = reinterpret_cast<FullOrderLog::orders_log*>(msg->data);
       OrderBook& o = orderBooks[ol->isin_id];
@@ -136,7 +136,7 @@ CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* ms
   {
   case CG_MSG_STREAM_DATA:
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
-    if (strcmp(streamData->msg_name, "fut_instruments") == 0)
+    if (streamData->msg_index == FutInfo::fut_instruments_index)
     {
       FutureInfo::fut_instruments* inst = reinterpret_cast<FutureInfo::fut_instruments*>(streamData->data);
       futureInfo[inst->isin_id] = *inst;
