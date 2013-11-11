@@ -1,9 +1,7 @@
 #pragma pack(push, 4)
 
-// Scheme "scheme" description
 namespace FullOrderLog
 {
-
     struct orders_log
     {
         signed long long replID; // i8

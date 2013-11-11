@@ -22,6 +22,7 @@
     <ClInclude Include="FullOrderLog.hpp" />
     <ClInclude Include="FutInfoRepl.hpp" />
     <ClInclude Include="Headers.h" />
+    <ClInclude Include="OptInfoRepl.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Everything.cpp" />

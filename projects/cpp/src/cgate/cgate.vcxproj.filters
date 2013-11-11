@@ -23,6 +23,9 @@
     <ClInclude Include="FutInfoRepl.hpp">
       <Filter>Generated</Filter>
     </ClInclude>
+    <ClInclude Include="OptInfoRepl.hpp">
+      <Filter>Generated</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Everything.cpp">

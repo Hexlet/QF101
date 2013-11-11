@@ -1,73 +1,73 @@
-2013-10-03 19:35:04.522;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
-2013-10-03 19:35:04.526;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
-2013-10-03 19:35:04.526;p2mq-cli;;MQ library started.
-2013-10-03 19:35:04.527;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
-2013-10-03 19:35:04.528;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
-2013-10-03 19:35:04.529;p2repl-cli;;Client replication library started
-2013-10-03 19:35:04.530;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New connection created;mq-conn 0x%X'
-2013-10-03 19:35:04.532;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream created;stream 0x%p'
-2013-10-03 19:35:04.533;p2repl-cli;;Stream created;stream 0x3C97710
-2013-10-03 19:35:04.534;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'New protocol is enabled;stream 0x%p'
-2013-10-03 19:35:04.534;p2repl-cli;;New protocol is enabled;stream 0x3C97710
-2013-10-03 19:35:04.536;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection connID %d created; conn str %s'
-2013-10-03 19:35:04.537;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket created;conn 0x%p;sock 0x%p'
-2013-10-03 19:35:04.543;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket connected;conn 0x%p;host '%s';port %u'
-2013-10-03 19:35:04.543;p2mq-cli;;Socket connected;conn 0x1D97E50;host 'localhost';port 4001
-2013-10-03 19:35:04.544;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Recv completed;;conn 0x%p;count %d; data %#.*Z'
-2013-10-03 19:35:04.545;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();InHdr %d;recvLen %d;recvRem %d'
-2013-10-03 19:35:04.546;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();system_type 0x%X'
-2013-10-03 19:35:04.547;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg received;mq-conn 0x%p;type 0x%X;ver 0x%X;len %u;flags 0x%X;sign 0x%X%X%X%X;body %#.*Z'
-2013-10-03 19:35:04.548;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'RecvLLMsg() finished;res %X;inHdr %d;recvRem %d'
-2013-10-03 19:35:04.549;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Router status received;mq-conn 0x%p;state 0x%X;node_name '%s';login_id %u'
-2013-10-03 19:35:04.550;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection 0x%p connected; connID %x'
-2013-10-03 19:35:04.551;p2mq-cli;;Connection 0x1D97C68 connected; connID 1
-2013-10-03 19:35:04.570;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%p;type 0x%X;len %u;oper_num %d'
-2013-10-03 19:35:04.608;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Operation result received;mq-conn 0x%p;type 0x%X;len %u;oper_num %d;res 0x%X('%s')'
-2013-10-03 19:35:04.611;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Posting message: to '%s'; cat: '%s'; type %d; size %d; bodySize: %d'
-2013-10-03 19:35:04.612;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%X;type 0x%X;len %u;oper_num %d'
-2013-10-03 19:35:04.627;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
-2013-10-03 19:35:04.628;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
-2013-10-03 19:35:04.629;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x3C98170
-2013-10-03 19:35:04.651;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New message added to recvList. Size: %d'
-2013-10-03 19:35:04.664;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opening started;stream 0x%p,type %d,name '%s',server_addr '%s''
-2013-10-03 19:35:04.665;p2repl-cli;;Stream opening started;stream 0x3C97710,type 256,name 'FORTS_ORDLOG_REPL',server_addr 'FINTER_FORTS3_OLD.inter_ordLog'
-2013-10-03 19:35:04.702;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opened;stream 0x%p;channel 0x%I64X'
-2013-10-03 19:35:04.702;p2repl-cli;;Stream opened;stream 0x3C97710;channel 0x5CAD6145025
-2013-10-03 19:35:04.704;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Using server schema;stream 0x%p'
-2013-10-03 19:35:04.705;p2repl-cli;;Using server schema;stream 0x3C97710
-2013-10-03 19:35:04.705;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is not equal to prev schema (lifenum ignored);stream 0x%p'
-2013-10-03 19:35:04.706;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x3C97710
-2013-10-03 19:35:04.707;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current life numbers;stream 0x%p;Name '%s';Client lifenumber %d;Server lifenumber %d'
-2013-10-03 19:35:04.708;p2repl-cli;;Current life numbers;stream 0x3C97710;Name 'FORTS_ORDLOG_REPL';Client lifenumber 330;Server lifenumber 330
-2013-10-03 19:35:04.709;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme setting started;stream 0x%p'
-2013-10-03 19:35:04.709;p2repl-cli;;Scheme setting started;stream 0x3C97710
-2013-10-03 19:35:04.765;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current schema differs from previous schema;stream 0x%p'
-2013-10-03 19:35:04.765;p2repl-cli;;Current schema differs from previous schema;stream 0x3C97710
-2013-10-03 19:35:04.766;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme is set;stream 0x%p;channel 0x%I64X'
-2013-10-03 19:35:04.767;p2repl-cli;;Scheme is set;stream 0x3C97710;channel 0x5CAD6145025
-2013-10-03 19:35:04.768;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module for table '%s' was successfully registered'
-2013-10-03 19:35:04.768;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
-2013-10-03 19:35:04.769;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
-2013-10-03 19:35:04.770;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
-2013-10-03 19:35:04.771;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics was registered;stream name %s'
-2013-10-03 19:35:04.772;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL
-2013-10-03 19:35:04.775;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category '***TP***';fmt '%s'
-2013-10-03 19:35:04.775;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category '***TP***';fmt '%s'
-2013-10-03 19:35:04.776;***TP***;;data: 0.00 mcs  begin trans: 0.00 mcs  process_tables: 0.00 mcs  commit: 0.00 mcs  parse: 0.00 mcs  stat: 0.00 mcs  user cbk: 0.00 mcs  5: 0.00 mcs  
-2013-10-03 19:35:04.777;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLOSE message posted;stream 0x%p'
-2013-10-03 19:35:04.778;p2repl-cli;;CLOSE message posted;stream 0x3C97710
-2013-10-03 19:35:04.779;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy deleted;stream 0x%p,policy 0x%p'
-2013-10-03 19:35:04.779;P2ReplStorage;;Basic policy deleted;stream 0x3C97710,policy 0x3C98170
-2013-10-03 19:35:04.780;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module was unregistered, module name %s'
-2013-10-03 19:35:04.781;p2repl-cli;;Statistics module was unregistered, module name Datastream@ReplClient
-2013-10-03 19:35:04.782;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-03 19:35:04.782;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-03 19:35:04.783;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
-2013-10-03 19:35:04.784;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection erased;mq-conn 0x%X'
-2013-10-03 19:35:04.785;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket closed;conn 0x%p'
-2013-10-03 19:35:04.786;p2mq-cli;;Socket closed;conn 0x1D97E50
-2013-10-03 19:35:04.787;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection released;mq-conn 0x%X'
-2013-10-03 19:35:04.788;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library stopped'
-2013-10-03 19:35:04.789;p2repl-cli;;Client replication library stopped
-2013-10-03 19:35:04.791;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library stopped'
-2013-10-03 19:35:04.791;p2mq-cli;;MQ library stopped
+2013-11-11 13:47:17.173;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
+2013-11-11 13:47:17.179;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library started.'
+2013-11-11 13:47:17.179;p2mq-cli;;MQ library started.
+2013-11-11 13:47:17.180;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
+2013-11-11 13:47:17.181;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library started'
+2013-11-11 13:47:17.182;p2repl-cli;;Client replication library started
+2013-11-11 13:47:17.184;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New connection created;mq-conn 0x%X'
+2013-11-11 13:47:17.185;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream created;stream 0x%p'
+2013-11-11 13:47:17.186;p2repl-cli;;Stream created;stream 0x3467380
+2013-11-11 13:47:17.187;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'New protocol is enabled;stream 0x%p'
+2013-11-11 13:47:17.188;p2repl-cli;;New protocol is enabled;stream 0x3467380
+2013-11-11 13:47:17.190;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection connID %d created; conn str %s'
+2013-11-11 13:47:17.191;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket created;conn 0x%p;sock 0x%p'
+2013-11-11 13:47:17.197;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket connected;conn 0x%p;host '%s';port %u'
+2013-11-11 13:47:17.198;p2mq-cli;;Socket connected;conn 0x1737AF8;host 'localhost';port 4001
+2013-11-11 13:47:17.198;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Recv completed;;conn 0x%p;count %d; data %#.*Z'
+2013-11-11 13:47:17.199;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();InHdr %d;recvLen %d;recvRem %d'
+2013-11-11 13:47:17.200;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'CConnection::RecvLLMsg();system_type 0x%X'
+2013-11-11 13:47:17.201;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg received;mq-conn 0x%p;type 0x%X;ver 0x%X;len %u;flags 0x%X;sign 0x%X%X%X%X;body %#.*Z'
+2013-11-11 13:47:17.202;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'RecvLLMsg() finished;res %X;inHdr %d;recvRem %d'
+2013-11-11 13:47:17.203;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Router status received;mq-conn 0x%p;state 0x%X;node_name '%s';login_id %u'
+2013-11-11 13:47:17.204;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection 0x%p connected; connID %x'
+2013-11-11 13:47:17.205;p2mq-cli;;Connection 0x1737910 connected; connID 1
+2013-11-11 13:47:17.224;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%p;type 0x%X;len %u;oper_num %d'
+2013-11-11 13:47:17.261;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Operation result received;mq-conn 0x%p;type 0x%X;len %u;oper_num %d;res 0x%X('%s')'
+2013-11-11 13:47:17.264;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Posting message: to '%s'; cat: '%s'; type %d; size %d; bodySize: %d'
+2013-11-11 13:47:17.265;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'LLMsg is sent;mq-conn 0x%X;type 0x%X;len %u;oper_num %d'
+2013-11-11 13:47:17.281;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
+2013-11-11 13:47:17.282;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy created;stream 0x%p,policy 0x%p'
+2013-11-11 13:47:17.283;P2ReplStorage;;Basic policy created;stream 0x0,policy 0x3467DE0
+2013-11-11 13:47:17.305;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'New message added to recvList. Size: %d'
+2013-11-11 13:47:17.317;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opening started;stream 0x%p,type %d,name '%s',server_addr '%s''
+2013-11-11 13:47:17.318;p2repl-cli;;Stream opening started;stream 0x3467380,type 256,name 'FORTS_ORDLOG_REPL',server_addr 'FINTER_FORTS3_OLD.inter_ordLog'
+2013-11-11 13:47:17.366;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Stream opened;stream 0x%p;channel 0x%I64X'
+2013-11-11 13:47:17.366;p2repl-cli;;Stream opened;stream 0x3467380;channel 0x7A2D6145025
+2013-11-11 13:47:17.369;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Using server schema;stream 0x%p'
+2013-11-11 13:47:17.369;p2repl-cli;;Using server schema;stream 0x3467380
+2013-11-11 13:47:17.370;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Desired schema is not equal to prev schema (lifenum ignored);stream 0x%p'
+2013-11-11 13:47:17.371;p2repl-cli;;Desired schema is not equal to prev schema (lifenum ignored);stream 0x3467380
+2013-11-11 13:47:17.372;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current life numbers;stream 0x%p;Name '%s';Client lifenumber %d;Server lifenumber %d'
+2013-11-11 13:47:17.372;p2repl-cli;;Current life numbers;stream 0x3467380;Name 'FORTS_ORDLOG_REPL';Client lifenumber 330;Server lifenumber 330
+2013-11-11 13:47:17.373;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme setting started;stream 0x%p'
+2013-11-11 13:47:17.374;p2repl-cli;;Scheme setting started;stream 0x3467380
+2013-11-11 13:47:17.431;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Current schema differs from previous schema;stream 0x%p'
+2013-11-11 13:47:17.431;p2repl-cli;;Current schema differs from previous schema;stream 0x3467380
+2013-11-11 13:47:17.432;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Scheme is set;stream 0x%p;channel 0x%I64X'
+2013-11-11 13:47:17.433;p2repl-cli;;Scheme is set;stream 0x3467380;channel 0x7A2D6145025
+2013-11-11 13:47:17.434;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module for table '%s' was successfully registered'
+2013-11-11 13:47:17.434;p2repl-cli;;Statistics module for table 'orders_log' was successfully registered
+2013-11-11 13:47:17.435;p2repl-cli;;Statistics module for table 'multileg_orders_log' was successfully registered
+2013-11-11 13:47:17.435;p2repl-cli;;Statistics module for table 'sys_events' was successfully registered
+2013-11-11 13:47:17.436;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics was registered;stream name %s'
+2013-11-11 13:47:17.437;p2repl-cli;;Statistics was registered;stream name FORTS_ORDLOG_REPL
+2013-11-11 13:47:17.440;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category '***TP***';fmt '%s'
+2013-11-11 13:47:17.440;P2Trace;error;Couldn't save initial severity trace state to the INI;severity 0;category '***TP***';fmt '%s'
+2013-11-11 13:47:17.441;***TP***;;data: 0.00 mcs  begin trans: 0.00 mcs  process_tables: 0.00 mcs  commit: 0.00 mcs  parse: 0.00 mcs  stat: 0.00 mcs  user cbk: 0.00 mcs  5: 0.00 mcs  
+2013-11-11 13:47:17.442;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'CLOSE message posted;stream 0x%p'
+2013-11-11 13:47:17.443;p2repl-cli;;CLOSE message posted;stream 0x3467380
+2013-11-11 13:47:17.443;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'P2ReplStorage';fmt 'Basic policy deleted;stream 0x%p,policy 0x%p'
+2013-11-11 13:47:17.444;P2ReplStorage;;Basic policy deleted;stream 0x3467380,policy 0x3467DE0
+2013-11-11 13:47:17.445;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Statistics module was unregistered, module name %s'
+2013-11-11 13:47:17.445;p2repl-cli;;Statistics module was unregistered, module name Datastream@ReplClient
+2013-11-11 13:47:17.446;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-11-11 13:47:17.447;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-11-11 13:47:17.447;p2repl-cli;;Statistics module was unregistered, module name Table@Datastream
+2013-11-11 13:47:17.448;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection erased;mq-conn 0x%X'
+2013-11-11 13:47:17.449;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Socket closed;conn 0x%p'
+2013-11-11 13:47:17.450;p2mq-cli;;Socket closed;conn 0x1737AF8
+2013-11-11 13:47:17.451;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'Connection released;mq-conn 0x%X'
+2013-11-11 13:47:17.452;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2repl-cli';fmt 'Client replication library stopped'
+2013-11-11 13:47:17.453;p2repl-cli;;Client replication library stopped
+2013-11-11 13:47:17.454;P2Trace;error;Couldn't save initial trace state to the INI;severity 0;category 'p2mq-cli';fmt 'MQ library stopped'
+2013-11-11 13:47:17.454;p2mq-cli;;MQ library stopped

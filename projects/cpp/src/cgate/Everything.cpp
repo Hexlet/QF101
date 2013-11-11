@@ -1,5 +1,6 @@
 #include "headers.h"
 #include "FutInfoRepl.hpp"
+#include "OptInfoRepl.hpp"
 #include "FullOrderLog.hpp"
 
 enum OrderAction
@@ -42,11 +43,30 @@ double bcdToDouble(char* bcd)
   return (double)intpart / powersOf10[(size_t)scale];
 }
 
+struct BidAndAsk
+{
+  Real bid, ask;
+};
+
 class OrderBook
 {
   map<Real, int> bids;
   map<Real, int> asks;
 public:
+  bool isConsistent;
+
+  enum {
+    NotReady,
+    AlmostReady,
+    Ready
+  } isReadyForAssembly;
+  
+  OrderBook()
+  {
+    isConsistent = false; // clearly not
+    isReadyForAssembly = Ready; // not yet
+  }
+
   void AddBid(Real price, int volume)
   {
     bids[price] += volume;
@@ -88,31 +108,77 @@ public:
     else
       return bid + ask;
   }
-  void ProcessOrder(bool bid, bool increase, Real price, int volume)
+  void ProcessOrder(bool bid, bool increase, Real price, int volume, int amountRest = -1)
   {
     map<Real,int>& bucket = bid ? bids : asks;
-    if (increase)
+
+    if (amountRest != -1)
+    {
+      // we're in an 'incomplete market' so take this on faith
+      bucket[price] = amountRest;
+    }
+    else if (increase)
       bucket[price] += volume;
     else {
       bucket[price] -= volume;
-      assert(bucket[price] >= 0);
-      if (bucket[price] == 0)
-        bucket.erase(price);
     }
+    
+    if (bucket[price] == 0)
+        bucket.erase(price);
+  }
+  void Verify()
+  {
+    // check all volumes are > 0
+    for_each(begin(bids), end(bids), [](pair<Real,int> bid) { assert(bid.second > 0); });
+    for_each(begin(asks), end(asks), [](pair<Real,int> ask) { assert(ask.second > 0); });
   }
 };
 
 bool quit = false;
 
 map<int, FutureInfo::fut_instruments> futureInfo;
+map<int, OptionInfo::opt_sess_contents> optionInfo;
 map<int, OrderBook> orderBooks;
+map<int, BidAndAsk> orderBookShapshots;
 
 CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
   switch (msg->type)
   {
+  case CG_MSG_TN_COMMIT:
+    cout << "COMMIT" << endl;
+    for (auto i = begin(orderBooks); i != end(orderBooks); ++i)
+    {
+      // order books that are ready to commit become consistent
+      if (i->second.isReadyForAssembly == OrderBook::Ready) 
+      {
+        i->second.isConsistent = true;
+        //i->second.Verify();
+
+        BidAndAsk bidAsk = { i->second.GetBestBid(), i->second.GetBestAsk() };
+        orderBookShapshots[i->first] = bidAsk;
+
+        // note: we have *no idea* if this is a futures or options contract, so...
+        string name;
+        if (futureInfo.find(i->first) != futureInfo.end())
+          name = futureInfo[i->first].name;
+        else
+          name = optionInfo[i->first].name;
+
+        cout << i->first << '\t' << bidAsk.bid << '\t' << bidAsk.ask <<
+          '\t' << name << endl;
+      }
+
+      // all order books that are almost ready to process become ready
+      if (i->second.isReadyForAssembly == OrderBook::AlmostReady)
+        i->second.isReadyForAssembly = OrderBook::Ready;
+
+    }
+    
+    break;
   case CG_MSG_STREAM_DATA:
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
+    
     if (streamData->msg_index == FullOrderLog::orders_log_index)
     {
       FullOrderLog::orders_log* ol = reinterpret_cast<FullOrderLog::orders_log*>(msg->data);
@@ -120,20 +186,39 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
       bool bid = ol->dir == 1;
       if (!(ol->status & OrderStatusNonSystem))
       {
-        switch (ol->action)
+        // if we're ready to assemble the order book, do it!
+        if (o.isReadyForAssembly == OrderBook::Ready)
         {
-        case OrderActionAdd:
-          o.ProcessOrder(bid, true, bcdToDouble(ol->price), ol->amount);
-          break;
-        case OrderActionDelete:
-          o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
-          break;
-        case OrderActionReduce:
-          o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
-          break;
+          double price = bcdToDouble(ol->price);
+          switch (ol->action)
+          {
+          case OrderActionAdd:
+            o.ProcessOrder(bid, true, price, ol->amount, ol->amount_rest);
+            break;
+          case OrderActionDelete:
+            assert(ol->amount > 0 && "deletion on nil order");
+            assert(ol->amount_rest == 0 && "order deletion must have remaining amt=0");
+            o.ProcessOrder(bid, false, price, ol->amount, ol->amount_rest);
+            break;
+          case OrderActionReduce:
+            o.ProcessOrder(bid, false, price, ol->amount, ol->amount_rest);
+            break;
+          }
+          
+          double bestBid = orderBooks[ol->isin_id].GetBestBid();
+          double bestAsk = orderBooks[ol->isin_id].GetBestAsk();
+
+          // not consistent during assembly!
+          o.isConsistent = false;
+        } 
+        else
+        {
+          if (ol->status & OrderStatusEndOfTransaction)
+          {
+            // ok we're almost ready
+            o.isReadyForAssembly = OrderBook::AlmostReady;
+          } 
         }
-        cout << futureInfo[ol->isin_id].name << " bid " <<
-          o.GetBestBid() << " ask " << o.GetBestAsk() << endl;
       }
     }
     break;
@@ -142,6 +227,24 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
   return CG_ERR_OK;
 }
 
+CG_RESULT optInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
+{
+  using namespace OptionInfo;
+
+  switch (msg->type)
+  {
+  case CG_MSG_STREAM_DATA:
+    cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
+    if (streamData->msg_index == opt_sess_contents_index)
+    {
+      opt_sess_contents* inst = reinterpret_cast<opt_sess_contents*>(streamData->data);
+      optionInfo[inst->isin_id] = *inst;
+    }
+    break;
+  }
+
+  return CG_ERR_OK;
+}
 
 CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
@@ -162,8 +265,6 @@ CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* ms
   return CG_ERR_OK;
 }
 
-
-
 #ifdef _WIN32
 BOOL timeToGo(DWORD)
 {
@@ -177,6 +278,7 @@ int main()
   const char* connStr = "p2tcp://127.0.0.1:4001;app_name=qf101";
   const char* futInfo = "p2repl://FORTS_FUTINFO_REPL";
   const char* fullOrderLog = "p2repl://FORTS_ORDLOG_REPL";
+  const char* optInfo = "p2repl://FORTS_OPTINFO_REPL";
 
   cg_env_open("ini=qf101.ini;key=11111111");
   cg_conn_t* conn = NULL;
@@ -184,6 +286,9 @@ int main()
 
   cg_listener_t* futInfoListener;
   cg_lsn_new(conn, futInfo, &futInfoCallback, 0, &futInfoListener);
+
+  cg_listener_t* optInfoListener;
+  cg_lsn_new(conn, optInfo, &optInfoCallback, 0, &optInfoListener);
 
   cg_listener_t* fullOrderLogListener;
   cg_lsn_new(conn, fullOrderLog, &fullOrderLogCallback, 0, &fullOrderLogListener);
@@ -218,7 +323,17 @@ int main()
       case CG_STATE_ERROR:
         cg_lsn_close(futInfoListener);
         break;
-      }      
+      }  
+      cg_lsn_getstate(optInfoListener, &state);
+      switch (state)
+      {
+      case CG_STATE_CLOSED:
+        cg_lsn_open(optInfoListener, 0);
+        break;
+      case CG_STATE_ERROR:
+        cg_lsn_close(optInfoListener);
+        break;
+      } 
       cg_lsn_getstate(fullOrderLogListener, &state);
       switch (state)
       {
@@ -237,6 +352,11 @@ cleanup:
   {
     cg_lsn_close(futInfoListener);
     cg_lsn_destroy(futInfoListener);
+  }
+  if (optInfoListener != NULL)
+  {
+    cg_lsn_close(optInfoListener);
+    cg_lsn_destroy(optInfoListener);
   }
   if (conn != NULL)
     cg_conn_destroy(conn);
