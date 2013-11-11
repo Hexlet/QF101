@@ -4,9 +4,22 @@
 
 enum OrderAction
 {
-  Delete,
-  Add,
-  Reduce
+  OrderActionDelete,
+  OrderActionAdd,
+  OrderActionReduce
+};
+
+enum OrderStatus
+{
+  OrderStatusQuote            = 0x01,
+  OrderStatusCounter          = 0x02,
+  OrderStatusNonSystem        = 0x04,
+  OrderStatusEndOfTransaction = 0x1000,
+  OrderStatusFillOrKill       = 0x80000,
+  OrderStatusResultOfMove     = 0x100000,
+  OrderStatusResultOfCancel   = 0x200000,
+  OrderStatusResultOfGroupCancel = 0x400000,
+  OrderStatusCrossTradeLeftCancel = 0x20000000
 };
 
 double powersOf10[] = { 1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 10000000.0 };
@@ -105,17 +118,17 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
       FullOrderLog::orders_log* ol = reinterpret_cast<FullOrderLog::orders_log*>(msg->data);
       OrderBook& o = orderBooks[ol->isin_id];
       bool bid = ol->dir == 1;
-      if (!(ol->status & 0x04))
+      if (!(ol->status & OrderStatusNonSystem))
       {
         switch (ol->action)
         {
-        case OrderAction::Add:
+        case OrderActionAdd:
           o.ProcessOrder(bid, true, bcdToDouble(ol->price), ol->amount);
           break;
-        case OrderAction::Delete:
+        case OrderActionDelete:
           o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
           break;
-        case OrderAction::Reduce:
+        case OrderActionReduce:
           o.ProcessOrder(bid, false, bcdToDouble(ol->price), ol->amount);
           break;
         }
@@ -132,13 +145,15 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
 
 CG_RESULT futInfoCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
+  using namespace FutureInfo;
+
   switch (msg->type)
   {
   case CG_MSG_STREAM_DATA:
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
-    if (streamData->msg_index == FutInfo::fut_instruments_index)
+    if (streamData->msg_index == fut_instruments_index)
     {
-      FutureInfo::fut_instruments* inst = reinterpret_cast<FutureInfo::fut_instruments*>(streamData->data);
+      fut_instruments* inst = reinterpret_cast<fut_instruments*>(streamData->data);
       futureInfo[inst->isin_id] = *inst;
     }
     break;
