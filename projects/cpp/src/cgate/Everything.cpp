@@ -2,7 +2,11 @@
 #include "FutInfoRepl.hpp"
 #include "OptInfoRepl.hpp"
 #include "FullOrderLog.hpp"
+#include "OrderBook.hpp"
+#include "Utils.hpp"
 
+// note: behavior different depending on whether order book or
+// full order log is being streamed
 enum OrderAction
 {
   OrderActionDelete,
@@ -10,6 +14,7 @@ enum OrderAction
   OrderActionReduce
 };
 
+// there are internal statuses used by RTS in addition to those below:
 enum OrderStatus
 {
   OrderStatusQuote            = 0x01,
@@ -23,116 +28,7 @@ enum OrderStatus
   OrderStatusCrossTradeLeftCancel = 0x20000000
 };
 
-double powersOf10[] = { 1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 10000000.0 };
 
-double stringToDouble(string& s)
-{
-  // if the string is empty, just return 0.0
-  if (s.empty()) return 0.0;
-
-  auto dotPos = s.find('.');
-  s.erase(s.begin() + dotPos);
-  return _atoi64(s.c_str())/powersOf10[s.length() - dotPos] ;
-}
-
-double bcdToDouble(char* bcd)
-{
-  int64_t intpart;
-  int8_t scale;
-  cg_bcd_get(reinterpret_cast<void*>(bcd), &intpart, &scale);
-  return (double)intpart / powersOf10[(size_t)scale];
-}
-
-struct BidAndAsk
-{
-  Real bid, ask;
-};
-
-class OrderBook
-{
-  map<Real, int> bids;
-  map<Real, int> asks;
-public:
-  bool isConsistent;
-
-  enum {
-    NotReady,
-    AlmostReady,
-    Ready
-  } isReadyForAssembly;
-  
-  OrderBook()
-  {
-    isConsistent = false; // clearly not
-    isReadyForAssembly = Ready; // not yet
-  }
-
-  void AddBid(Real price, int volume)
-  {
-    bids[price] += volume;
-  }
-  void RemoveBid(Real price, int volume)
-  {
-    bids[price] -= volume;
-    if (bids[price] == 0)
-      bids.erase(price);
-  }
-  void AddAsk(Real price, int volume)
-  {
-    asks[price] += volume;
-  }
-  void RemoveAsk(Real price, int volume)
-  {
-    asks[price] -= volume;
-    if (asks[price] == 0)
-      asks.erase(price);
-  }
-  Real GetBestBid()
-  {
-    if (bids.empty()) return 0;
-    else return bids.rbegin()->first;
-  }
-  Real GetBestAsk()
-  {
-    if (asks.empty()) return 0;
-    else return asks.begin()->first;
-  }
-  Real GetPrice()
-  {
-    Real bid = GetBestBid();
-    Real ask = GetBestAsk();
-    if (bid == 0 && ask == 0)
-      return 0;
-    else if (bid != 0 && ask != 0)
-      return 0.5 * (bid+ask);
-    else
-      return bid + ask;
-  }
-  void ProcessOrder(bool bid, bool increase, Real price, int volume, int amountRest = -1)
-  {
-    map<Real,int>& bucket = bid ? bids : asks;
-
-    if (amountRest != -1)
-    {
-      // we're in an 'incomplete market' so take this on faith
-      bucket[price] = amountRest;
-    }
-    else if (increase)
-      bucket[price] += volume;
-    else {
-      bucket[price] -= volume;
-    }
-    
-    if (bucket[price] == 0)
-        bucket.erase(price);
-  }
-  void Verify()
-  {
-    // check all volumes are > 0
-    for_each(begin(bids), end(bids), [](pair<Real,int> bid) { assert(bid.second > 0); });
-    for_each(begin(asks), end(asks), [](pair<Real,int> ask) { assert(ask.second > 0); });
-  }
-};
 
 bool quit = false;
 
@@ -140,6 +36,15 @@ map<int, FutureInfo::fut_instruments> futureInfo;
 map<int, OptionInfo::opt_sess_contents> optionInfo;
 map<int, OrderBook> orderBooks;
 map<int, BidAndAsk> orderBookShapshots;
+map<int, OrderBook> orderBooks20;
+
+// assembly of depth-20 order book
+CG_RESULT fut20Callback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
+{
+
+
+  return CG_ERR_OK;
+}
 
 CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
@@ -174,7 +79,6 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
         i->second.isReadyForAssembly = OrderBook::Ready;
 
     }
-    
     break;
   case CG_MSG_STREAM_DATA:
     cg_msg_streamdata_t* streamData = (cg_msg_streamdata_t*)msg;
@@ -189,7 +93,7 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
         // if we're ready to assemble the order book, do it!
         if (o.isReadyForAssembly == OrderBook::Ready)
         {
-          double price = bcdToDouble(ol->price);
+          Real price = bcdToReal(ol->price);
           switch (ol->action)
           {
           case OrderActionAdd:
@@ -205,8 +109,8 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
             break;
           }
           
-          double bestBid = orderBooks[ol->isin_id].GetBestBid();
-          double bestAsk = orderBooks[ol->isin_id].GetBestAsk();
+          Real bestBid = orderBooks[ol->isin_id].GetBestBid();
+          Real bestAsk = orderBooks[ol->isin_id].GetBestAsk();
 
           // not consistent during assembly!
           o.isConsistent = false;
@@ -279,19 +183,17 @@ int main()
   const char* futInfo = "p2repl://FORTS_FUTINFO_REPL";
   const char* fullOrderLog = "p2repl://FORTS_ORDLOG_REPL";
   const char* optInfo = "p2repl://FORTS_OPTINFO_REPL";
+  const char* fut20 = "p2repl://FORTS_FUTAGGR20_REPL";
 
   cg_env_open("ini=qf101.ini;key=11111111");
   cg_conn_t* conn = NULL;
   cg_conn_new(connStr, &conn);
 
-  cg_listener_t* futInfoListener;
+  cg_listener_t *futInfoListener, *optInfoListener, *fullOrderLogListener, *fut20Listener;
   cg_lsn_new(conn, futInfo, &futInfoCallback, 0, &futInfoListener);
-
-  cg_listener_t* optInfoListener;
   cg_lsn_new(conn, optInfo, &optInfoCallback, 0, &optInfoListener);
-
-  cg_listener_t* fullOrderLogListener;
   cg_lsn_new(conn, fullOrderLog, &fullOrderLogCallback, 0, &fullOrderLogListener);
+  cg_lsn_new(conn, fut20, &fut20Callback, 0, &fut20Listener);
 
 #ifdef _WIN32
   SetConsoleOutputCP(1251);
@@ -314,50 +216,43 @@ int main()
     else if (state == CG_STATE_ACTIVE)
     {
       cg_conn_process(conn, 1, 0);
-      cg_lsn_getstate(futInfoListener, &state);
-      switch (state)
+
+      auto fillOrKillListener = [](cg_listener_t* listener)
       {
-      case CG_STATE_CLOSED:
-        cg_lsn_open(futInfoListener, 0);
-        break;
-      case CG_STATE_ERROR:
-        cg_lsn_close(futInfoListener);
-        break;
-      }  
-      cg_lsn_getstate(optInfoListener, &state);
-      switch (state)
-      {
-      case CG_STATE_CLOSED:
-        cg_lsn_open(optInfoListener, 0);
-        break;
-      case CG_STATE_ERROR:
-        cg_lsn_close(optInfoListener);
-        break;
-      } 
-      cg_lsn_getstate(fullOrderLogListener, &state);
-      switch (state)
-      {
-      case CG_STATE_CLOSED:
-        cg_lsn_open(fullOrderLogListener, 0);
-        break;
-      case CG_STATE_ERROR:
-        cg_lsn_close(fullOrderLogListener);
-        break;
-      }
+        uint32_t s;
+        cg_lsn_getstate(listener, &s);
+        switch (s)
+        {
+        case CG_STATE_CLOSED:
+          cg_lsn_open(listener, 0);
+          break;
+        case CG_STATE_ERROR:
+          cg_lsn_close(listener);
+          break;
+        }
+      };
+
+      fillOrKillListener(futInfoListener);
+      fillOrKillListener(optInfoListener);
+      fillOrKillListener(fullOrderLogListener);
+      fillOrKillListener(fut20Listener);
     }
   }
 
 cleanup:
-  if (futInfoListener != NULL)
+  auto killListener = [](cg_listener_t* listener)
   {
-    cg_lsn_close(futInfoListener);
-    cg_lsn_destroy(futInfoListener);
-  }
-  if (optInfoListener != NULL)
-  {
-    cg_lsn_close(optInfoListener);
-    cg_lsn_destroy(optInfoListener);
-  }
+    if (listener != NULL)
+    {
+      cg_lsn_close(listener);
+      cg_lsn_destroy(listener);
+    }
+  };
+
+  killListener(futInfoListener);
+  killListener(optInfoListener);
+  killListener(fut20Listener);
+
   if (conn != NULL)
     cg_conn_destroy(conn);
   cg_env_close();

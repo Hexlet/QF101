@@ -23,6 +23,8 @@
     <ClInclude Include="FutInfoRepl.hpp" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="OptInfoRepl.hpp" />
+    <ClInclude Include="OrderBook.hpp" />
+    <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Everything.cpp" />
@@ -96,7 +98,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>d:\boost;d:\QuantLib\QuantLib;C:\Program Files (x86)\P2CGate\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\quantlib;c:\boost;c:\QuantLib\;C:\Program Files (x86)\P2CGate\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -130,7 +132,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>d:\boost;d:\QuantLib\QuantLib;C:\Program Files (x86)\P2CGate\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\quantlib;c:\boost;c:\QuantLib\QuantLib;C:\Program Files (x86)\P2CGate\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

@@ -26,6 +26,12 @@
     <ClInclude Include="OptInfoRepl.hpp">
       <Filter>Generated</Filter>
     </ClInclude>
+    <ClInclude Include="OrderBook.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.hpp">
+      <Filter>Generated</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Everything.cpp">
