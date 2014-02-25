@@ -211,7 +211,7 @@ int main()
     } 
     else if (state == CG_STATE_CLOSED)
     {
-      cg_conn_open(conn, 0);
+      auto result = cg_conn_open(conn, 0);
     } 
     else if (state == CG_STATE_ACTIVE)
     {
