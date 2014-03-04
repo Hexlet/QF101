@@ -12,6 +12,9 @@
     <Filter Include="Generated">
       <UniqueIdentifier>{161bac89-1869-4cb2-bbd6-9be472e3b910}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{24bf3e63-e7e3-4ef5-a59b-2c7d1317cf2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers.h">
@@ -30,6 +33,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Utils.hpp">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="Portfolio.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages.hpp">
       <Filter>Generated</Filter>
     </ClInclude>
   </ItemGroup>

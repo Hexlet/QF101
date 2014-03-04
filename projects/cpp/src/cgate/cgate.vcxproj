@@ -22,8 +22,10 @@
     <ClInclude Include="FullOrderLog.hpp" />
     <ClInclude Include="FutInfoRepl.hpp" />
     <ClInclude Include="Headers.h" />
+    <ClInclude Include="Messages.hpp" />
     <ClInclude Include="OptInfoRepl.hpp" />
     <ClInclude Include="OrderBook.hpp" />
+    <ClInclude Include="Portfolio.hpp" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <ItemGroup>

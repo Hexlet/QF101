@@ -285,6 +285,7 @@ namespace FutureInfo
         signed int sort_order; // i4
         struct cg_time_t d_start; // t
         char exch_pay[11]; // d16.5
+        char price_intercl[11]; // d16.5
         
     };
     const int fut_sess_contents_index = 13;

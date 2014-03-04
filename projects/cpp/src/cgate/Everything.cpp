@@ -4,6 +4,8 @@
 #include "FullOrderLog.hpp"
 #include "OrderBook.hpp"
 #include "Utils.hpp"
+#include "Messages.hpp"
+#include "Portfolio.hpp"
 
 // note: behavior different depending on whether order book or
 // full order log is being streamed
@@ -27,8 +29,6 @@ enum OrderStatus
   OrderStatusResultOfGroupCancel = 0x400000,
   OrderStatusCrossTradeLeftCancel = 0x20000000
 };
-
-
 
 bool quit = false;
 

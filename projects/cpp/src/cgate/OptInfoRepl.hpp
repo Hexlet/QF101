@@ -122,6 +122,7 @@ namespace OptionInfo
         signed int sort_order; // i4
         struct cg_time_t d_start; // t
         char exch_pay[10]; // d16.2
+        char volat_intercl[11]; // d16.5
         
     };
     const int opt_sess_contents_index = 4;
