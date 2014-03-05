@@ -41,8 +41,6 @@ map<int, OrderBook> orderBooks20;
 // assembly of depth-20 order book
 CG_RESULT fut20Callback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
 {
-
-
   return CG_ERR_OK;
 }
 

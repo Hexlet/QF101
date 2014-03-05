@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>rxcpp</id>
+    <version>1.0.2</version>
+    <title>Reactive Extensions for C++</title>
+    <authors>Microsoft Open Technologies Inc.</authors>
+    <owners>Microsoft Open Technologies Inc.</owners>
+    <licenseUrl>http://rxcpp.codeplex.com/license</licenseUrl>
+    <projectUrl>https://rxcpp.codeplex.com/</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkId=261274</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The Reactive Extensions (Rx) is a library for composing asynchronous and event-based programs using observable sequences and operators. Operators are the asynchronous form of standard library algorithms and they operate on Observables instead of iterators. Using Rx, developers represent asynchronous data streams with Observables, query asynchronous data streams using operators, and parameterize the concurrency in the asynchronous data streams using Schedulers.</description>
+    <summary>The Reactive Extensions (Rx) asynchronous programming library</summary>
+    <releaseNotes>This release has many new operators and schedulers. Also some preliminary support for MVVM in WinRT.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <language />
+    <tags>RxCpp RxC++ Rx Reactive Observable Functional native nativepackage</tags>
+  </metadata>
+</package>

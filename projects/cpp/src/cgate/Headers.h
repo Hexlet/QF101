@@ -17,5 +17,7 @@ using namespace QuantLib;
 #include <Windows.h>
 #endif // _WIN32
 
+// todo: cpplinq and rx once they compile
+#include <cpprx/rx.hpp>
 
 #endif // !headers_h

@@ -10,7 +10,7 @@ public:
   // important note: the use of these flags is mostly bullshit since,
   // unlike with order log shapshots, we CANNOT build a 100% consistent
   // order log from stream data.
-  // we arrive at 100% consistency through the user of amount_rest :)
+  // we arrive at 100% consistency through the use of amount_rest :)
   enum {
     NotReady,
     AlmostReady,
