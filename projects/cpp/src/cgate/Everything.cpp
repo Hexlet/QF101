@@ -36,7 +36,6 @@ map<int, FutureInfo::fut_instruments> futureInfo;
 map<int, OptionInfo::opt_sess_contents> optionInfo;
 map<int, OrderBook> orderBooks;
 map<int, BidAndAsk> orderBookShapshots;
-map<int, OrderBook> orderBooks20;
 
 // assembly of depth-20 order book
 CG_RESULT fut20Callback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_t* msg, void* data)
@@ -75,7 +74,6 @@ CG_RESULT fullOrderLogCallback(cg_conn_t* conn, cg_listener_t* listener, cg_msg_
       // all order books that are almost ready to process become ready
       if (i->second.isReadyForAssembly == OrderBook::AlmostReady)
         i->second.isReadyForAssembly = OrderBook::Ready;
-
     }
     break;
   case CG_MSG_STREAM_DATA:
@@ -222,7 +220,9 @@ int main()
         switch (s)
         {
         case CG_STATE_CLOSED:
-          cg_lsn_open(listener, 0);
+          {
+            auto result = cg_lsn_open(listener, 0);
+          }
           break;
         case CG_STATE_ERROR:
           cg_lsn_close(listener);

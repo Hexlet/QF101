@@ -1,8 +1,5 @@
-#ifndef Portfolio_hpp
-#define Portfolio_hpp
-
+#pragma once
 #include "Headers.h"
-using namespace boost::math;
 
 class PortfolioEntry
 {
@@ -50,5 +47,3 @@ public:
     }
   }
 };
-
-#endif

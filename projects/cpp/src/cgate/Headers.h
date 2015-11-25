@@ -1,14 +1,23 @@
-#ifndef headers_h
-#define _headers_h
+#pragma once
 
 #include <iostream>
 #include <string>
 #include <map>
 #include <cassert>
+#include <memory>
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
-#include <ql/quantlib.hpp>
-using namespace QuantLib;
+// diagnose what parts of boost are being loaded
+#define BOOST_LIB_DIAGNOSTIC
+
+//#include <ql/quantlib.hpp>
+//using namespace QuantLib;
+
+// for now let's just use the typedef here
+// will take in quantlib later
+typedef double Real;
 
 #include <cgate.h>
 
@@ -18,6 +27,7 @@ using namespace QuantLib;
 #endif // _WIN32
 
 // todo: cpplinq and rx once they compile
-#include <cpprx/rx.hpp>
 
-#endif // !headers_h
+template <typename T> int sign(T val) {
+  return (T(0) < val) - (val < T(0));
+}
